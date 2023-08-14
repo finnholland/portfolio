@@ -14,26 +14,27 @@ export default function Home() {
 
   const Profile = () => {
     return (
-      <div className='h-full pt-24'>
-        <div className='flex flex-row mb-5'>
-          <div>
-            <Image className='rounded-2xl' src='/images/profile.jpg' alt='fromeroad' width={100} height={100} />
+      <div className='h-full py-24 justify-between flex flex-col'>
+        <div>
+          <div className='flex flex-row mb-5'>
+            <div>
+              <Image className='rounded-2xl' src='/images/profile.jpg' alt='fromeroad' width={100} height={100} />
+            </div>
+            <div className='flex flex-col ml-3'>
+              <span className='text-4xl font-bold'>{about.name}</span>
+              <span className='text-base font-medium my-1'>{about.position}</span>
+              <span className='font-extralight'>{about.shortBio}</span>
+            </div>
           </div>
-          <div className='flex flex-col ml-3'>
-            <span className='text-4xl font-bold'>{about.name}</span>
-            <span className='text-base font-medium my-1'>{about.position}</span>
-            <span className='font-extralight'>{about.shortBio}</span>
-          </div>
-        </div>
-        <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi porta consequat nibh, id finibus arcu varius ut. eget orci.</span>
-        <div className=' my-20'>
-          <div className='flex flex-row p-4'>
-            <span className='flex flex-grow mr-8 aspect-square bg-green-400 rounded-2xl'>1</span>
-            <span className='flex flex-grow aspect-square bg-green-400 rounded-2xl'>2</span>
-          </div>
-          <div className='flex flex-row p-4'>
-            <span className='flex flex-grow mr-8 aspect-square bg-green-400 rounded-2xl'>3</span>
-            <span className='flex flex-grow aspect-square bg-green-400 rounded-2xl'>4</span>
+          <div className=' my-8'>
+            <div className='flex flex-row p-4'>
+              <span className='flex flex-grow mr-8 aspect-square bg-green-400 rounded-2xl'>1</span>
+              <span className='flex flex-grow aspect-square bg-green-400 rounded-2xl'>2</span>
+            </div>
+            <div className='flex flex-row p-4'>
+              <span className='flex flex-grow mr-8 aspect-square bg-green-400 rounded-2xl'>3</span>
+              <span className='flex flex-grow aspect-square bg-green-400 rounded-2xl'>4</span>
+            </div>
           </div>
         </div>
         <div className='text-sm font-light'>
@@ -60,7 +61,7 @@ export default function Home() {
 
   const About = () => { 
     return (
-      <div>
+      <div className='p-5 pt-0'>
         <span>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi porta consequat nibh, id finibus arcu varius ut. eget orci.
         </span>
@@ -76,11 +77,11 @@ export default function Home() {
         </div>
         <div>
           <p className='font-medium mb-5'>{experience.title}</p>
-          <span className='text-neutral-300'>
+          <span >
             {experience.roles.map((role: Role) => (
               <div className='flex flex-col mb-5'>
                 <span>{role.role}</span>
-                <span className='font-light'>{role.description}</span>
+                <span className='text-neutral-300 font-light'>{role.description}</span>
               </div>
             ))}
           </span>
@@ -124,7 +125,7 @@ export default function Home() {
 
   return (
     <div className='bg-blue-950 h-screen w-screen flex flex-row justify-center overflow-auto'>
-      <div className='flex flex-col w-1/5'>
+      <div className='flex flex-col w-1/5 sticky top-0'>
         <Profile />
       </div>
       <div className='flex flex-col w-1/3 pt-24 px-5'>
