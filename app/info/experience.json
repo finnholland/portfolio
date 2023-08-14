@@ -1,0 +1,45 @@
+[
+  {
+    "title": "Full Stack Developer · Graduate at Chamonix IT",
+    "roles": [
+      {
+        "role": "Cloud Engineer - 6 Months",
+        "description": "Utilised Terraform for Azure cloud to deliever a highly scalable solution for National Pharmacies, deployed in one click.\nMaintained cloud infrastructure ensuring best security practices by leveraging Prisma vulnerability scanning.\nDeveloped Azure PowerShell scripts to assist in automation for Azure resources.\nIntegrated the client onto the cloud, seamlessly transitioning their data away from on premises.\nDeveloped and deployed changes in C# APIs and MSSQL databases."
+      },
+      {
+        "role": "UI/UX & Front End Developer - 12 Months",
+        "description": "Led UI/UX Design in Figma for SAHealth adhering to client requirements, resulting in end-user centric interfaces.\nDeveloped an Angular front end to deliver a user friendly experience and integrated it with a MSSQL and C# backend.\nAssisted with the development of MSSQL and C# API integration."
+      }
+    ],
+    "date": "2022 - 2023",
+    "tags": [
+      "Figma",
+      "Angular",
+      "JavaScript",
+      "C#",
+      "MSSQL",
+      "Oracle",
+      "Azure",
+      "Terraform"
+    ]
+  },
+  {
+    "title": "UI/UX Designer · Internship at DXC Technology",
+    "roles": [
+      {
+        "description": "Designed front-end elements for an employee management portal.\nWorked on full-stack development in Angular, Spring MVC, and Neo4j\nto create, deploy, and test the product.\nDesigned and developed the product as a POC in React Native and Google Firebase"
+      }
+    ],
+    "date": "2021 - 2022",
+    "tags": [
+      "Adobe XD",
+      "Angular",
+      "JavaScript",
+      "Java",
+      "Spring MVC",
+      "Neo4j",
+      "Firebase",
+      "React/Native"
+    ]
+  }
+]

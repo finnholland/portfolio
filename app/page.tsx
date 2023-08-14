@@ -1,113 +1,145 @@
+'use client'
 import Image from 'next/image'
+import about from './info/about.json'
+import experience from './info/experience.json'
+import projects from './info/projects.json'
+import { useEffect, useState } from 'react'
+import LinkedIn from './assets/linkedin'
+import GitHub from './assets/github'
 
 export default function Home() {
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+
+  const [github, setGithub] = useState(false)
+  const [linkedIn, setLinkedIn] = useState(false)
+
+  const Profile = () => {
+    return (
+      <div className='h-full pt-24'>
+        <div className='flex flex-row mb-5'>
+          <div>
+            <Image className='rounded-2xl' src='/images/profile.jpg' alt='fromeroad' width={100} height={100} />
+          </div>
+          <div className='flex flex-col ml-3'>
+            <span className='text-4xl font-bold'>{about.name}</span>
+            <span className='text-base font-medium my-1'>{about.position}</span>
+            <span className='font-extralight'>{about.shortBio}</span>
+          </div>
+        </div>
+        <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi porta consequat nibh, id finibus arcu varius ut. eget orci.</span>
+        <div className=' my-20'>
+          <div className='flex flex-row p-4'>
+            <span className='flex flex-grow mr-8 aspect-square bg-green-400 rounded-2xl'>1</span>
+            <span className='flex flex-grow aspect-square bg-green-400 rounded-2xl'>2</span>
+          </div>
+          <div className='flex flex-row p-4'>
+            <span className='flex flex-grow mr-8 aspect-square bg-green-400 rounded-2xl'>3</span>
+            <span className='flex flex-grow aspect-square bg-green-400 rounded-2xl'>4</span>
+          </div>
+        </div>
+        <div className='text-sm font-light'>
+          <p className=' mb-3'>
+            Designed in <a className='hover:tag-text underline' href='https://www.figma.com/' target='_blank'>Figma</a>
+            &nbsp;and developed in <a className='hover:tag-text underline' href="https://code.visualstudio.com/" target='_blank'>VS Code</a>.
+            Frontend is built with <a className='hover:tag-text underline' href="https://nextjs.org/" target='_blank'>Next.js</a>
+            &nbsp;and <a className='hover:tag-text underline' href="https://tailwindcss.com/" target='_blank'>Tailwind CSS.</a>
+          </p>
+          <p>Hosted using <a className='hover:tag-text underline' href="https://aws.amazon.com/amplify/" target='_blank'>AWS Amplify</a>
+            &nbsp;and <a className='hover:tag-text underline' href="https://aws.amazon.com/route53/" target='_blank'>Route 53</a> through Terraform.</p>
+          <div className='flex flex-row mt-5'>
+            <a className='mr-5 cursor-pointer' onMouseEnter={() => setGithub(true)} onMouseLeave={() => setGithub(false)}>
+              <GitHub fill={github ? '#00EEFF' : '#d4d4d4'}/>
+            </a>
+            <a className='mr-5 cursor-pointer' onMouseEnter={() => setLinkedIn(true)} onMouseLeave={() => setLinkedIn(false)}>
+              <LinkedIn fill={linkedIn ? '#00EEFF' : '#d4d4d4'} />
+            </a>
+          </div>
         </div>
       </div>
+    )
+  }
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
+  const About = () => { 
+    return (
+      <div>
+        <span>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi porta consequat nibh, id finibus arcu varius ut. eget orci.
+        </span>
       </div>
+    )
+  }
 
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+  const Experience = ({ experience }: { experience: Experience }) => { 
+    return (
+      <div className='flex-row flex flex-shrink my-5 p-5'>
+        <div className='mr-5 shrink-0 w-24'>
+          <span className='font-extralight'>{experience.date}</span>
+        </div>
+        <div>
+          <p className='font-medium mb-5'>{experience.title}</p>
+          <span className='text-neutral-300'>
+            {experience.roles.map((role: Role) => (
+              <div className='flex flex-col mb-5'>
+                <span>{role.role}</span>
+                <span className='font-light'>{role.description}</span>
+              </div>
+            ))}
+          </span>
+          <div className='flex flex-shrink flex-row flex-wrap'>
+            {experience.tags.map((tag) => (
+              <Tag key={tag} tag={tag}/>
+            ))}
+          </div>
+        </div>
       </div>
-    </main>
+    )
+  }
+
+  const Project = ({ project }: {project: Project}) => { 
+    return (
+      <div key={project.title} className='rounded-2xl hover:bg-sky-700 p-5 my-5 flex-row flex cursor-pointer'>
+        <div className='mr-5 shrink-0'>
+          <Image className='w-fit h-fit' src='/images/fromeroad.png' alt='fromeroad' width={80} height={50} />
+        </div>
+        <div className='flex-col flex flex-shrink'>
+          <span>{project.title}</span>
+          <span className='text-neutral-300 font-extralight'>{project.description}</span>
+          <span>{project.imageUrl}</span>
+          <div className='flex flex-shrink flex-row flex-wrap'>
+          {project.tags.map((tag) => (
+            <Tag key={tag} tag={tag}/>
+          ))}
+          </div>
+        </div>
+      </div>
+    )
+  }
+
+  const Tag = ({ tag }: { tag: string }) => { 
+    return (
+      <span className='px-3 py-1 text-sm mr-1.5 mt-2 rounded-full tag tag-text'>
+        {tag}
+      </span>
+    )
+  }
+
+  return (
+    <div className='bg-blue-950 h-screen w-screen flex flex-row justify-center overflow-auto'>
+      <div className='flex flex-col w-1/5'>
+        <Profile />
+      </div>
+      <div className='flex flex-col w-1/3 pt-24 px-5'>
+        <div className='flex flex-col w-full mb-8'>
+          <About />
+        </div>
+        <div className='flex flex-col w-full mb-8'>
+          {experience.map((item) => (
+            <Experience key={item.title} experience={item}/>
+          ))}
+        </div>
+        {projects.map((item) => (
+          <Project key={item.title} project={item}/>
+        ))}
+      </div>
+    </div>
   )
 }
