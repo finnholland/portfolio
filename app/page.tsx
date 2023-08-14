@@ -39,18 +39,18 @@ export default function Home() {
         </div>
         <div className='text-sm font-light'>
           <p className=' mb-3'>
-            Designed in <a className='hover:tag-text underline' href='https://www.figma.com/' target='_blank'>Figma</a>
-            &nbsp;and developed in <a className='hover:tag-text underline' href="https://code.visualstudio.com/" target='_blank'>VS Code</a>.
-            Frontend is built with <a className='hover:tag-text underline' href="https://nextjs.org/" target='_blank'>Next.js</a>
-            &nbsp;and <a className='hover:tag-text underline' href="https://tailwindcss.com/" target='_blank'>Tailwind CSS.</a>
+            Designed in <a className='hover:text-custom-blue-100 underline' href='https://www.figma.com/' target='_blank'>Figma</a>
+            &nbsp;and developed in <a className='hover:text-custom-blue-100 underline' href="https://code.visualstudio.com/" target='_blank'>VS Code</a>.
+            Frontend is built with <a className='hover:text-custom-blue-100 underline' href="https://nextjs.org/" target='_blank'>Next.js</a>
+            &nbsp;and <a className='hover:text-custom-blue-100 underline' href="https://tailwindcss.com/" target='_blank'>Tailwind CSS.</a>
           </p>
-          <p>Hosted using <a className='hover:tag-text underline' href="https://aws.amazon.com/amplify/" target='_blank'>AWS Amplify</a>
-            &nbsp;and <a className='hover:tag-text underline' href="https://aws.amazon.com/route53/" target='_blank'>Route 53</a> through Terraform.</p>
+          <p>Hosted using <a className='hover:text-custom-blue-100 underline' href="https://aws.amazon.com/amplify/" target='_blank'>AWS Amplify</a>
+            &nbsp;and <a className='hover:text-custom-blue-100 underline' href="https://aws.amazon.com/route53/" target='_blank'>Route 53</a> built with Terraform.</p>
           <div className='flex flex-row mt-5'>
-            <a className='mr-5 cursor-pointer' onMouseEnter={() => setGithub(true)} onMouseLeave={() => setGithub(false)}>
+            <a className='mr-5 cursor-pointer' href='https://github.com/fhllnd' target='_blank' onMouseEnter={() => setGithub(true)} onMouseLeave={() => setGithub(false)}>
               <GitHub fill={github ? '#00EEFF' : '#d4d4d4'}/>
             </a>
-            <a className='mr-5 cursor-pointer' onMouseEnter={() => setLinkedIn(true)} onMouseLeave={() => setLinkedIn(false)}>
+            <a className='mr-5 cursor-pointer' href='https://www.linkedin.com/in/finnholland/' target='_blank' onMouseEnter={() => setLinkedIn(true)} onMouseLeave={() => setLinkedIn(false)}>
               <LinkedIn fill={linkedIn ? '#00EEFF' : '#d4d4d4'} />
             </a>
           </div>
@@ -71,8 +71,8 @@ export default function Home() {
 
   const Experience = ({ experience }: { experience: Experience }) => { 
     return (
-      <div className='flex-row flex flex-shrink my-5 p-5'>
-        <div className='mr-5 shrink-0 w-24'>
+      <div className='flex-row flex flex-shrink my-5 p-5 lg:hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:hover:drop-shadow-lg hover:bg-custom-blue-50/20 lg:hover:!opacity-100 lg:group-hover:opacity-50 rounded-2xl'>
+        <div className='mr-5 shrink-0 w-24 hover:custom-blue'>
           <span className='font-extralight'>{experience.date}</span>
         </div>
         <div>
@@ -97,7 +97,7 @@ export default function Home() {
 
   const Project = ({ project }: {project: Project}) => { 
     return (
-      <div key={project.title} className='rounded-2xl hover:bg-sky-700 p-5 my-5 flex-row flex cursor-pointer'>
+      <div key={project.title} className='flex-row flex flex-shrink my-5 p-5 lg:hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:hover:drop-shadow-lg hover:bg-custom-blue-50/20 lg:hover:!opacity-100 lg:group-hover:opacity-50 rounded-2xl'>
         <div className='mr-5 shrink-0'>
           <Image className='w-fit h-fit' src='/images/fromeroad.png' alt='fromeroad' width={80} height={50} />
         </div>
@@ -117,7 +117,7 @@ export default function Home() {
 
   const Tag = ({ tag }: { tag: string }) => { 
     return (
-      <span className='px-3 py-1 text-sm mr-1.5 mt-2 rounded-full tag tag-text'>
+      <span className='px-3 py-1 text-sm mr-1.5 mt-2 rounded-full bg-custom-blue-50 text-custom-blue-100'>
         {tag}
       </span>
     )
@@ -132,14 +132,16 @@ export default function Home() {
         <div className='flex flex-col w-full mb-8'>
           <About />
         </div>
-        <div className='flex flex-col w-full mb-8'>
+        <div className='group flex flex-col w-full mb-8'>
           {experience.map((item) => (
             <Experience key={item.title} experience={item}/>
           ))}
         </div>
-        {projects.map((item) => (
-          <Project key={item.title} project={item}/>
-        ))}
+        <div className='group flex flex-col w-full mb-8'>
+          {projects.map((item) => (
+            <Project key={item.title} project={item}/>
+          ))}
+        </div>
       </div>
     </div>
   )

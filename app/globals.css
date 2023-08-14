@@ -25,14 +25,3 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
-
-.tag {
-  background-color: #174879;
-}
-
-.tag-text {
-   color: #00EEFF;
-}
-a:hover {
-   color: #00EEFF;
-}
