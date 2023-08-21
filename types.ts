@@ -10,12 +10,14 @@ interface Experience {
   roles: Role[]
   date: string
   tags: string[]
+  companyUrl: string
 }
 interface Project {
   title: string
   description: string
   imageUrl: string
   tags: string[]
+  githubUrl: string
 }
 interface Role {
   role: string | undefined,

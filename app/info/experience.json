@@ -21,12 +21,14 @@
       "Oracle",
       "Azure",
       "Terraform"
-    ]
+    ],
+    "companyUrl": "https://chamonix.com.au"
   },
   {
     "title": "UI/UX Designer · Internship at DXC Technology",
     "roles": [
       {
+        "role": "",
         "description": "Designed front-end elements for an employee management portal.\nWorked on full-stack development in Angular, Spring MVC, and Neo4j\nto create, deploy, and test the product.\nDesigned and developed the product as a POC in React Native and Google Firebase"
       }
     ],
@@ -40,6 +42,7 @@
       "Neo4j",
       "Firebase",
       "React/Native"
-    ]
+    ],
+    "companyUrl": "https://dxc.com"
   }
 ]

@@ -1,8 +1,8 @@
 [
   {
     "title": "fromeroad",
-    "description": "Fictional social media platform for the employees of Adelaide's Lot Fourteen on Frome road. Allowing users to post, comment, and share their interests with a weekly points leaderboard. Integrating React, Node Express, MySQL, all hosted on AWS.",
-    "imageUrl": "",
+    "description": "Fictional social media platform for the employees of Adelaide's Lot Fourteen on Frome road.Allowing users to post, comment, and share their interests with a weekly points leaderboard. Integrating React, Node Express, MySQL, all hosted on AWS.",
+    "imageUrl": "/images/fromeroad.png",
     "tags": [
       "Figma",
       "Illustrator",
@@ -12,12 +12,13 @@
       "AWS",
       "Express",
       "Terraform"
-    ]
+    ],
+    "githubUrl": "https://github.com/finnholland/fromeroad"
   },
   {
     "title": "zeile",
     "description": "Real-time forum style chat room where all users share the same floor. Utilising Google Firebase snapshots for realtime updates in the database and serving users instantly.",
-    "imageUrl": "",
+    "imageUrl": "/images/zeile.png",
     "tags": [
       "Figma",
       "Illustrator",
@@ -26,7 +27,8 @@
       "Firebase",
       "NextJS",
       "Terraform"
-    ]
+    ],
+    "githubUrl": "https://github.com/finnholland/zeile"
   },
   {
     "title": "shareio",
@@ -39,7 +41,8 @@
       "React",
       "Azure",
       "Terraform"
-    ]
+    ],
+    "githubUrl": "https://github.com/finnholland/zeile"
   },
   {
     "title": "blog",
@@ -52,6 +55,7 @@
       "React",
       "AWS",
       "Terraform"
-    ]
+    ],
+    "githubUrl": "https://github.com/finnholland/zeile"
   }
 ]

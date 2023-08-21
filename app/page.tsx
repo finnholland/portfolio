@@ -71,7 +71,9 @@ export default function Home() {
 
   const Experience = ({ experience }: { experience: Experience }) => { 
     return (
-      <div className='flex-row flex flex-shrink my-5 p-5 lg:hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:hover:drop-shadow-lg hover:bg-custom-blue-50/20 lg:hover:!opacity-100 lg:group-hover:opacity-50 rounded-2xl'>
+      <a key={experience.title} href={experience.companyUrl} target='_blank'
+        className='flex-row flex flex-shrink my-5 p-5 lg:hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:hover:drop-shadow-lg 
+        hover:bg-custom-blue-50/20 lg:hover:!opacity-100 lg:group-hover:opacity-50 rounded-2xl'>
         <div className='mr-5 shrink-0 w-24 hover:custom-blue'>
           <span className='font-extralight'>{experience.date}</span>
         </div>
@@ -79,7 +81,7 @@ export default function Home() {
           <p className='font-medium mb-5'>{experience.title}</p>
           <span >
             {experience.roles.map((role: Role) => (
-              <div className='flex flex-col mb-5'>
+              <div key={role.role} className='flex flex-col mb-5'>
                 <span>{role.role}</span>
                 <span className='text-neutral-300 font-light'>{role.description}</span>
               </div>
@@ -91,27 +93,27 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </div>
+      </a>
     )
   }
 
   const Project = ({ project }: {project: Project}) => { 
     return (
-      <div key={project.title} className='flex-row flex flex-shrink my-5 p-5 lg:hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:hover:drop-shadow-lg hover:bg-custom-blue-50/20 lg:hover:!opacity-100 lg:group-hover:opacity-50 rounded-2xl'>
+      <a key={project.title} href={project.githubUrl}
+        className='cursor-pointer flex-row flex flex-shrink my-5 p-5 lg:hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:hover:drop-shadow-lg hover:bg-custom-blue-50/20 lg:hover:!opacity-100 lg:group-hover:opacity-50 rounded-2xl'>
         <div className='mr-5 shrink-0'>
-          <Image className='w-fit h-fit' src='/images/fromeroad.png' alt='fromeroad' width={80} height={50} />
+          <Image className='w-fit h-fit rounded-md' src={project.imageUrl} alt='fromeroad' width={80} height={50} />
         </div>
         <div className='flex-col flex flex-shrink'>
           <span>{project.title}</span>
           <span className='text-neutral-300 font-extralight'>{project.description}</span>
-          <span>{project.imageUrl}</span>
           <div className='flex flex-shrink flex-row flex-wrap'>
           {project.tags.map((tag) => (
             <Tag key={tag} tag={tag}/>
           ))}
           </div>
         </div>
-      </div>
+      </a>
     )
   }
 
