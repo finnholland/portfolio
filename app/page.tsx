@@ -126,25 +126,31 @@ export default function Home() {
   }
 
   return (
-    <div className='bg-blue-950 h-screen w-screen flex flex-row justify-center overflow-auto'>
+    <div className='bg-blue-950 h-screen w-screen flex flex-row justify-center overflow-auto scroll-smooth'>
       <div className='flex flex-col w-1/5 sticky top-0'>
         <Profile />
       </div>
-      <div className='flex flex-col w-1/3 pt-24 px-5'>
-        <div className='flex flex-col w-full mb-8'>
+      <div className='flex flex-col w-1/3 px-5'>
+        <div id='about' className='flex flex-col w-full mb-8 pt-24'>
           <About />
         </div>
-        <div className='group flex flex-col w-full mb-8'>
+        <div id='experience' className='group flex flex-col w-full mb-8 pt-14'>
           {experience.map((item) => (
             <Experience key={item.title} experience={item}/>
           ))}
         </div>
-        <div className='group flex flex-col w-full mb-8'>
+        <div id='project' className='group flex flex-col w-full mb-8 pt-14'>
           {projects.map((item) => (
             <Project key={item.title} project={item}/>
           ))}
         </div>
       </div>
+      <div className='flex flex-col sticky top-0 py-24 justify-between'>
+        <a className='mb-10 max-h-1/2 flex-grow border-solid border-l-2 border-sky-500 flex justify-center pl-1' style={{writingMode: 'vertical-lr'}} href='#about'>about</a>
+        <a className='mb-10 max-h-1/8 flex-grow border-dashed border-l-2 border-sky-500 flex justify-center pl-1' style={{writingMode: 'vertical-lr'}} href='#experience'>experience</a>
+        <a className='max-h-1/8 flex-grow border-dashed border-l-2 border-sky-500 flex justify-center pl-1' style={{writingMode: 'vertical-lr'}} href='#project'>project</a>
+      </div>
+
     </div>
   )
 }
