@@ -140,19 +140,41 @@ export default function Home() {
             <Experience key={item.title} experience={item}/>
           ))}
         </div>
-        <div id='project' className='group flex flex-col w-full mb-8 pt-14'>
+        <div id='projects' className='group flex flex-col w-full mb-8 pt-14'>
           {projects.map((item) => (
             <Project key={item.title} project={item}/>
           ))}
         </div>
       </div>
       <div className='flex flex-col flex-grow-0 sticky top-0 py-24 justify-between w-8'>
-        <a onClick={() => setSection('about')} className={`${section === 'about' ? 'max-h-1/2 border-solid' : 'max-h-1/8 border-dashed hover:border-solid hover:scale-y-100'} mb-10 flex-grow border-l-2 border-sky-500 flex justify-center pl-1 transform transition duration-300`}
-          style={{ writingMode: 'vertical-lr' }} href='#about'>about</a>
-        <a onClick={() => setSection('experience')} className={`${section === 'experience' ? 'max-h-1/2 border-solid' : 'max-h-1/8 border-dashed hover:border-solid hover:scale-y-100'} mb-10 flex-grow border-l-2 border-sky-500 flex justify-center pl-1 transform transition duration-300`}
-          style={{ writingMode: 'vertical-lr' }} href='#experience'>experience</a>
-        <a onClick={() => setSection('projects')} className={`${section === 'projects' ? 'max-h-1/2 border-solid' : 'max-h-1/8 border-dashed hover:border-solid hover:scale-y-100'} mb-10 flex-grow border-l-2 border-sky-500 flex justify-center pl-1 transform transition duration-300`}
-          style={{ writingMode: 'vertical-lr' }} href='#project'>projects</a>
+        <ul className='flex flex-col h-full'>
+          <li className='flex h-1/3'>
+            <a className='group flex items-center py-3 flex-col'
+              style={{ writingMode: 'vertical-lr' }} href='#about'>
+              <span className="nav-indicator mr-4 h-1/8 border-dashed border-sky-500 border-l-2 transition-all group-hover:h-1/2 group-hover:border-solid group-focus-visible:h-16 group-focus-visible:border-solid motion-reduce:transition-none"></span>
+              <span className="nav-text text-xs uppercase tracking-wides group-hover:text-custom-blue-100 group-focus-visible:text-custom-blue-100">About</span>
+            </a>
+          </li>
+
+          <li className='flex h-1/3'>
+            <a className='group flex items-center py-3 flex-col'
+              style={{ writingMode: 'vertical-lr' }} href='#experience'>
+              <span className="nav-indicator mr-4 h-1/8 border-dashed border-sky-500 border-l-2 transition-all group-hover:h-1/2 group-hover:border-solid group-focus-visible:h-16 group-focus-visible:border-solid motion-reduce:transition-none"></span>
+              <span className="nav-text text-xs uppercase tracking-wides group-hover:text-custom-blue-100 group-focus-visible:text-custom-blue-100">experience</span>
+            </a>
+          </li>
+             <li className='flex h-1/3'>
+            <a className='group flex items-center py-3 flex-col'
+              style={{ writingMode: 'vertical-lr' }} href='#projects'>
+              <span className="nav-indicator mr-4 h-1/8 border-dashed border-sky-500 border-l-2 transition-all group-hover:h-1/2 group-hover:border-solid group-focus-visible:h-16 group-focus-visible:border-solid motion-reduce:transition-none"></span>
+              <span className="nav-text text-xs uppercase tracking-wides group-hover:text-custom-blue-100 group-focus-visible:text-custom-blue-100">projects</span>
+            </a>
+          </li>
+
+        </ul>
+
+          
+
       </div>
 
     </div>
