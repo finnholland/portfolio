@@ -3,7 +3,7 @@ import Image from 'next/image'
 import about from './info/about.json'
 import experience from './info/experience.json'
 import projects from './info/projects.json'
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import LinkedIn from './assets/linkedin'
 import GitHub from './assets/github'
 
@@ -17,10 +17,43 @@ export default function Home() {
   const [github, setGithub] = useState(false)
   const [linkedIn, setLinkedIn] = useState(false)
   const [section, setSection] = useState('about')
+  const scrollRef = React.createRef<HTMLDivElement>();
+
+  const [aboutHeight, setAboutHeight] = useState(0)
+  const [experienceHeight, setExperienceHeight] = useState(0)
+  const [projectsHeight, setProjectsHeight] = useState(0)
+  const aboutRef = React.createRef<HTMLDivElement>();
+  const experienceRef = React.createRef<HTMLDivElement>();
+  const projectsRef = React.createRef<HTMLDivElement>();
+
+
+  const controlNavbar = () => {
+    if (scrollRef.current) { 
+      console.log(scrollRef.current.scrollTop)
+      const position = scrollRef.current.scrollTop
+      if (position >= 0 && position <= aboutHeight) { // if scroll down hide the navbar
+        setSection('about');
+      } else if (position >= aboutHeight && position <= experienceHeight+aboutHeight) {
+        setSection('experience');
+      } else { // if scroll up show the navbar
+        setSection('projects');
+      }
+    }
+
+    console.log(aboutHeight, experienceHeight, projectsHeight)
+  };
+
+  useEffect(() => {
+    if (aboutRef.current && experienceRef.current && projectsRef.current) {
+      setAboutHeight(aboutRef.current.clientHeight);
+      setExperienceHeight(experienceRef.current.clientHeight);
+      setProjectsHeight(projectsRef.current.clientHeight);
+    }
+  }, [aboutRef, experienceRef, projectsRef]);
   
   const Profile = () => {
     return (
-      <div className='h-full py-24 justify-between flex flex-col'>
+      <div className=' h-2/5 pt-24 justify-between flex flex-col'>
         <div>
           <div className='flex flex-row mb-5'>
             <div>
@@ -32,7 +65,7 @@ export default function Home() {
               <span className='font-extralight'>{about.shortBio}</span>
             </div>
           </div>
-          <div className=' my-8'>
+          {/* <div className=' my-8'>
             <div className='flex flex-row p-4'>
               <span className='flex flex-grow mr-8 aspect-square bg-green-400 rounded-2xl'>1</span>
               <span className='flex flex-grow aspect-square bg-green-400 rounded-2xl'>2</span>
@@ -41,7 +74,7 @@ export default function Home() {
               <span className='flex flex-grow mr-8 aspect-square bg-green-400 rounded-2xl'>3</span>
               <span className='flex flex-grow aspect-square bg-green-400 rounded-2xl'>4</span>
             </div>
-          </div>
+          </div> */}
         </div>
         <div className='text-sm font-light'>
           <p className=' mb-3'>
@@ -142,24 +175,25 @@ export default function Home() {
   }
 
   return (
-    <div className='bg-blue-950 h-screen w-screen flex flex-row justify-center overflow-auto scroll-smooth'>
+    <div ref={scrollRef} onScroll={controlNavbar} className='bg-blue-950 h-screen w-screen flex flex-row justify-center overflow-auto scroll-smooth'>
       <div className='flex flex-col w-1/5 sticky top-0'>
         <Profile />
       </div>
       <div className='flex flex-col w-1/3 px-5'>
-        <div id='about' className='flex flex-col w-full mb-8 pt-24'>
+        <div ref={aboutRef} id='about' className='flex flex-col w-full mb-8 pt-24'>
           <About />
         </div>
-        <div id='experience' className='group flex flex-col w-full mb-8 pt-14'>
+        <div ref={experienceRef} id='experience' className='group flex flex-col w-full mb-8 pt-14'>
           {experience.map((item) => (
             <Experience key={item.title} experience={item}/>
           ))}
         </div>
-        <div id='projects' className='group flex flex-col w-full mb-8 pt-14'>
+        <div ref={projectsRef} id='projects' className='group flex flex-col w-full mb-8 pt-14'>
           {projects.map((item) => (
             <Project key={item.title} project={item}/>
           ))}
         </div>
+        <div onClick={() => window.scrollTo(0, 0)}>back to top</div>
       </div>
       <div className='flex flex-col flex-grow-0 sticky top-0 py-24 justify-between w-8'>
         <ul className='flex flex-col h-full justify-between'>
@@ -186,7 +220,6 @@ export default function Home() {
           </li>
         </ul>
       </div>
-
     </div>
   )
 }
