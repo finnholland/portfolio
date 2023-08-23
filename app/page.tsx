@@ -11,6 +11,7 @@ export default function Home() {
 
   const [github, setGithub] = useState(false)
   const [linkedIn, setLinkedIn] = useState(false)
+  const [section, setSection] = useState('about')
 
   const Profile = () => {
     return (
@@ -145,10 +146,13 @@ export default function Home() {
           ))}
         </div>
       </div>
-      <div className='flex flex-col sticky top-0 py-24 justify-between'>
-        <a className='mb-10 max-h-1/2 flex-grow border-solid border-l-2 border-sky-500 flex justify-center pl-1' style={{writingMode: 'vertical-lr'}} href='#about'>about</a>
-        <a className='mb-10 max-h-1/8 flex-grow border-dashed border-l-2 border-sky-500 flex justify-center pl-1' style={{writingMode: 'vertical-lr'}} href='#experience'>experience</a>
-        <a className='max-h-1/8 flex-grow border-dashed border-l-2 border-sky-500 flex justify-center pl-1' style={{writingMode: 'vertical-lr'}} href='#project'>project</a>
+      <div className='flex flex-col flex-grow-0 sticky top-0 py-24 justify-between w-8'>
+        <a onClick={() => setSection('about')} className={`${section === 'about' ? 'max-h-1/2 border-solid' : 'max-h-1/8 border-dashed hover:border-solid hover:scale-y-100'} mb-10 flex-grow border-l-2 border-sky-500 flex justify-center pl-1 transform transition duration-300`}
+          style={{ writingMode: 'vertical-lr' }} href='#about'>about</a>
+        <a onClick={() => setSection('experience')} className={`${section === 'experience' ? 'max-h-1/2 border-solid' : 'max-h-1/8 border-dashed hover:border-solid hover:scale-y-100'} mb-10 flex-grow border-l-2 border-sky-500 flex justify-center pl-1 transform transition duration-300`}
+          style={{ writingMode: 'vertical-lr' }} href='#experience'>experience</a>
+        <a onClick={() => setSection('projects')} className={`${section === 'projects' ? 'max-h-1/2 border-solid' : 'max-h-1/8 border-dashed hover:border-solid hover:scale-y-100'} mb-10 flex-grow border-l-2 border-sky-500 flex justify-center pl-1 transform transition duration-300`}
+          style={{ writingMode: 'vertical-lr' }} href='#project'>projects</a>
       </div>
 
     </div>

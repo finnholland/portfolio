@@ -13,6 +13,19 @@
       "Express",
       "Terraform"
     ],
+    "cloudTags": [
+      "AWS",
+      "RDS",
+      "ECS",
+      "Route53",
+      "IAM",
+      "ECR",
+      "EC2",
+      "VPC",
+      "S3",
+      "CodePipeline",
+      "Secrets Manager"
+    ],
     "githubUrl": "https://github.com/finnholland/fromeroad"
   },
   {
@@ -27,6 +40,12 @@
       "Firebase",
       "NextJS",
       "Terraform"
+    ],
+    "cloudTags": [
+      "Firebase",
+      "Firestore",
+      "Hosting",
+      "Firebase Functions"
     ],
     "githubUrl": "https://github.com/finnholland/zeile"
   },

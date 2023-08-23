@@ -22,6 +22,15 @@
       "Azure",
       "Terraform"
     ],
+    "cloudTags": [
+      "Azure",
+      "Container Apps",
+      "Private DNS",
+      "VMs",
+      "Azure SQL",
+      "Function Apps",
+      "VNet"
+    ],
     "companyUrl": "https://chamonix.com.au"
   },
   {
@@ -42,6 +51,11 @@
       "Neo4j",
       "Firebase",
       "React/Native"
+    ],
+    "cloudTags": [
+      "Firebase",
+      "Firebase Auth",
+      "Firestore"
     ],
     "companyUrl": "https://dxc.com"
   }
