@@ -7,12 +7,17 @@ import { useEffect, useState } from 'react'
 import LinkedIn from './assets/linkedin'
 import GitHub from './assets/github'
 
+enum TAG_ENUM {
+  LANGAUGES = "Languages & Frameworks",
+  CLOUD_SERVICES = "Cloud Services"
+};
+
 export default function Home() {
 
   const [github, setGithub] = useState(false)
   const [linkedIn, setLinkedIn] = useState(false)
   const [section, setSection] = useState('about')
-
+  
   const Profile = () => {
     return (
       <div className='h-full py-24 justify-between flex flex-col'>
@@ -89,8 +94,8 @@ export default function Home() {
             ))}
           </span>
           <div className='flex flex-shrink flex-row flex-wrap'>
-            {experience.tags.map((tag) => (
-              <Tag key={tag} tag={tag}/>
+            {experience.tags.map((tagGroup) => (
+              <TagGroup key={tagGroup.type} tagGroup={tagGroup}/>
             ))}
           </div>
         </div>
@@ -100,7 +105,7 @@ export default function Home() {
 
   const Project = ({ project }: {project: Project}) => { 
     return (
-      <a key={project.title} href={project.githubUrl}
+      <a key={project.title} href={project.githubUrl} target='_blank'
         className='cursor-pointer flex-row flex flex-shrink my-5 p-5 lg:hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:hover:drop-shadow-lg hover:bg-custom-blue-50/20 lg:hover:!opacity-100 lg:group-hover:opacity-50 rounded-2xl'>
         <div className='mr-5 shrink-0'>
           <Image className='w-fit h-fit rounded-md' src={project.imageUrl} alt='fromeroad' width={80} height={50} />
@@ -109,8 +114,8 @@ export default function Home() {
           <span>{project.title}</span>
           <span className='text-neutral-300 font-extralight'>{project.description}</span>
           <div className='flex flex-shrink flex-row flex-wrap'>
-          {project.tags.map((tag) => (
-            <Tag key={tag} tag={tag}/>
+          {project.tags.map((tagGroup) => (
+            <TagGroup key={tagGroup.type} tagGroup={tagGroup}/>
           ))}
           </div>
         </div>
@@ -118,9 +123,19 @@ export default function Home() {
     )
   }
 
-  const Tag = ({ tag }: { tag: string }) => { 
+  const TagGroup = ({ tagGroup }: { tagGroup: TagGroup }) => { 
     return (
-      <span className='px-3 py-1 text-sm mr-1.5 mt-2 rounded-full bg-custom-blue-50 text-custom-blue-100'>
+      <div className='flex flex-shrink flex-row flex-wrap'>
+        {tagGroup.tags.map((tag) => (
+          <Tag key={tag} tag={tag} cloud={tagGroup.type === TAG_ENUM.CLOUD_SERVICES} />
+        ))}
+      </div>
+    )
+  }
+
+  const Tag = ({ tag, cloud }: { tag: string, cloud: boolean }) => {
+    return (
+      <span className={`${cloud ? 'bg-custom-pink-50 text-custom-pink-100' : 'bg-custom-blue-50 text-custom-blue-100'} px-3 py-1 text-sm mr-1.5 mt-2 rounded-full`}>
         {tag}
       </span>
     )
@@ -148,33 +163,28 @@ export default function Home() {
       </div>
       <div className='flex flex-col flex-grow-0 sticky top-0 py-24 justify-between w-8'>
         <ul className='flex flex-col h-full justify-between'>
-          <li className='flex h-1/8 hover:h-1/2 transition-all'>
+          <li onClick={() => setSection('about')} className={`${section === 'about' ? 'active h-3/4' : 'hover:h-1/2'} flex h-1/6 hover:h-3/4 transition-all`}>
             <a className='group flex items-center py-3 flex-col'
               style={{ writingMode: 'vertical-lr' }} href='#about'>
-              <span className="nav-indicator mr-4 border-dashed border-sky-500 border-l-2 transition-all h-full group-hover:border-solid group-focus-visible:h-16 group-focus-visible:border-solid motion-reduce:transition-none"></span>
-              <span className="nav-text text-xs uppercase tracking-wides group-hover:text-custom-blue-100 group-focus-visible:text-custom-blue-100">About</span>
+              <span className={`${section === 'about' ? 'border-solid' : 'border-dashed'} mr-4 border-sky-500 border-l-2 transition-all h-full group-hover:border-solid group-focus-visible:h-16 motion-reduce:transition-none`}></span>
+              <span className={`${section === 'about' ? 'text-custom-blue-100' : ''} text-xs uppercase tracking-wides group-hover:text-custom-blue-100 group-focus-visible:text-custom-blue-100`}>about</span>
             </a>
           </li>
-
-          <li className='flex h-1/8 hover:h-1/2 transition-all'>
+          <li onClick={() => setSection('experience')} className={`${section === 'experience' ? 'active h-3/4' : 'hover:h-1/2'} flex h-1/6 hover:h-3/4 transition-all`}>
             <a className='group flex items-center py-3 flex-col'
               style={{ writingMode: 'vertical-lr' }} href='#experience'>
-              <span className="nav-indicator mr-4 h-full border-dashed border-sky-500 border-l-2 transition-all group-hover:border-solid group-focus-visible:h-16 group-focus-visible:border-solid motion-reduce:transition-none"></span>
-              <span className="nav-text text-xs uppercase tracking-wides group-hover:text-custom-blue-100 group-focus-visible:text-custom-blue-100">experience</span>
+              <span className={`${section === 'experience' ? 'border-solid' : 'border-dashed'} mr-4 border-sky-500 border-l-2 transition-all h-full group-hover:border-solid group-focus-visible:h-16 motion-reduce:transition-none`}></span>
+              <span className={`${section === 'experience' ? 'text-custom-blue-100' : ''} text-xs uppercase tracking-wides group-hover:text-custom-blue-100 group-focus-visible:text-custom-blue-100`}>experience</span>
             </a>
           </li>
-             <li className='flex h-1/8 hover:h-1/2 transition-all'>
+          <li onClick={() => setSection('projects')} className={`${section === 'projects' ? 'active h-3/4' : 'hover:h-1/2'} flex h-1/6 hover:h-3/4 transition-all`}>
             <a className='group flex items-center py-3 flex-col'
               style={{ writingMode: 'vertical-lr' }} href='#projects'>
-              <span className="nav-indicator mr-4 h-full border-dashed border-sky-500 border-l-2 transition-all group-hover:border-solid group-focus-visible:h-16 group-focus-visible:border-solid motion-reduce:transition-none"></span>
-              <span className="nav-text text-xs uppercase tracking-wides group-hover:text-custom-blue-100 group-focus-visible:text-custom-blue-100">projects</span>
+              <span className={`${section === 'projects' ? 'border-solid' : 'border-dashed'} mr-4 border-sky-500 border-l-2 transition-all h-full group-hover:border-solid group-focus-visible:h-16 motion-reduce:transition-none`}></span>
+              <span className={`${section === 'projects' ? 'text-custom-blue-100' : ''} text-xs uppercase tracking-wides group-hover:text-custom-blue-100 group-focus-visible:text-custom-blue-100`}>projects</span>
             </a>
           </li>
-
         </ul>
-
-          
-
       </div>
 
     </div>

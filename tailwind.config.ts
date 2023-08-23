@@ -17,7 +17,11 @@ const config: Config = {
         'custom-blue': {
           50: '#174879',
           100: '#00EEFF'
-        }
+        },
+        'custom-pink': {
+          50: '#5C336E',
+          100: '#FF31C5'
+        },
       },
       maxWidth: {
         '1/4': '25%',

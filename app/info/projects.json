@@ -4,27 +4,34 @@
     "description": "Fictional social media platform for the employees of Adelaide's Lot Fourteen on Frome road.Allowing users to post, comment, and share their interests with a weekly points leaderboard. Integrating React, Node Express, MySQL, all hosted on AWS.",
     "imageUrl": "/images/fromeroad.png",
     "tags": [
-      "Figma",
-      "Illustrator",
-      "JavaScript",
-      "React",
-      "MySQL",
-      "AWS",
-      "Express",
-      "Terraform"
-    ],
-    "cloudTags": [
-      "AWS",
-      "RDS",
-      "ECS",
-      "Route53",
-      "IAM",
-      "ECR",
-      "EC2",
-      "VPC",
-      "S3",
-      "CodePipeline",
-      "Secrets Manager"
+      {
+        "type": "Languages & Frameworks",
+        "tags": [
+          "Figma",
+          "Illustrator",
+          "JavaScript",
+          "React",
+          "MySQL",
+          "Express",
+          "Terraform"
+        ]
+      },
+      {
+        "type": "Cloud Services",
+        "tags": [
+          "AWS",
+          "RDS",
+          "ECS",
+          "Route53",
+          "IAM",
+          "ECR",
+          "EC2",
+          "VPC",
+          "S3",
+          "CodePipeline",
+          "Secrets Manager"
+        ]
+      }
     ],
     "githubUrl": "https://github.com/finnholland/fromeroad"
   },
@@ -33,47 +40,27 @@
     "description": "Real-time forum style chat room where all users share the same floor. Utilising Google Firebase snapshots for realtime updates in the database and serving users instantly.",
     "imageUrl": "/images/zeile.png",
     "tags": [
-      "Figma",
-      "Illustrator",
-      "JavaScript",
-      "React",
-      "Firebase",
-      "NextJS",
-      "Terraform"
-    ],
-    "cloudTags": [
-      "Firebase",
-      "Firestore",
-      "Hosting",
-      "Firebase Functions"
-    ],
-    "githubUrl": "https://github.com/finnholland/zeile"
-  },
-  {
-    "title": "shareio",
-    "description": "File upload, download, and storage service hosted on Azure",
-    "imageUrl": "",
-    "tags": [
-      "Figma",
-      "Illustrator",
-      "JavaScript",
-      "React",
-      "Azure",
-      "Terraform"
-    ],
-    "githubUrl": "https://github.com/finnholland/zeile"
-  },
-  {
-    "title": "blog",
-    "description": "Serverless personal blog where I share development updates about random projects I am working on.",
-    "imageUrl": "",
-    "tags": [
-      "Figma",
-      "Illustrator",
-      "JavaScript",
-      "React",
-      "AWS",
-      "Terraform"
+      {
+        "type": "Languages & Frameworks",
+        "tags": [
+          "Figma",
+          "Illustrator",
+          "JavaScript",
+          "React",
+          "Firebase",
+          "NextJS",
+          "Terraform"
+        ]
+      },
+      {
+        "type": "Cloud Services",
+        "tags": [
+          "Firebase",
+          "Firestore",
+          "Hosting",
+          "Firebase Functions"
+        ]
+      }
     ],
     "githubUrl": "https://github.com/finnholland/zeile"
   }

@@ -13,23 +13,27 @@
     ],
     "date": "2022 - 2023",
     "tags": [
-      "Figma",
-      "Angular",
-      "JavaScript",
-      "C#",
-      "MSSQL",
-      "Oracle",
-      "Azure",
-      "Terraform"
-    ],
-    "cloudTags": [
-      "Azure",
-      "Container Apps",
-      "Private DNS",
-      "VMs",
-      "Azure SQL",
-      "Function Apps",
-      "VNet"
+      {
+        "type": "Languages & Frameworks",
+        "tags": [
+          "Figma", "Angular", "JavaScript", "C#",
+          "MSSQL",
+          "Oracle",
+          "Terraform"
+        ]
+      },
+      {
+        "type": "Cloud Services",
+        "tags": [
+          "Azure",
+          "Container Apps",
+          "Private DNS",
+          "VMs",
+          "Azure SQL",
+          "Function Apps",
+          "VNet"
+        ]
+      }
     ],
     "companyUrl": "https://chamonix.com.au"
   },
@@ -43,19 +47,26 @@
     ],
     "date": "2021 - 2022",
     "tags": [
-      "Adobe XD",
-      "Angular",
-      "JavaScript",
-      "Java",
-      "Spring MVC",
-      "Neo4j",
-      "Firebase",
-      "React/Native"
-    ],
-    "cloudTags": [
-      "Firebase",
-      "Firebase Auth",
-      "Firestore"
+      {
+        "type": "Languages & Frameworks",
+        "tags": [
+          "Adobe XD",
+          "Angular",
+          "JavaScript",
+          "Java",
+          "Spring MVC",
+          "Neo4j",
+          "React/Native"
+        ]
+      },
+      {
+        "type": "Cloud Services",
+        "tags": [
+          "Firebase",
+          "Firebase Auth",
+          "Firestore"
+        ]
+      }
     ],
     "companyUrl": "https://dxc.com"
   }
