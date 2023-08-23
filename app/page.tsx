@@ -147,26 +147,26 @@ export default function Home() {
         </div>
       </div>
       <div className='flex flex-col flex-grow-0 sticky top-0 py-24 justify-between w-8'>
-        <ul className='flex flex-col h-full'>
-          <li className='flex h-1/3'>
+        <ul className='flex flex-col h-full justify-between'>
+          <li className='flex h-1/8 hover:h-1/2 transition-all'>
             <a className='group flex items-center py-3 flex-col'
               style={{ writingMode: 'vertical-lr' }} href='#about'>
-              <span className="nav-indicator mr-4 h-1/8 border-dashed border-sky-500 border-l-2 transition-all group-hover:h-1/2 group-hover:border-solid group-focus-visible:h-16 group-focus-visible:border-solid motion-reduce:transition-none"></span>
+              <span className="nav-indicator mr-4 border-dashed border-sky-500 border-l-2 transition-all h-full group-hover:border-solid group-focus-visible:h-16 group-focus-visible:border-solid motion-reduce:transition-none"></span>
               <span className="nav-text text-xs uppercase tracking-wides group-hover:text-custom-blue-100 group-focus-visible:text-custom-blue-100">About</span>
             </a>
           </li>
 
-          <li className='flex h-1/3'>
+          <li className='flex h-1/8 hover:h-1/2 transition-all'>
             <a className='group flex items-center py-3 flex-col'
               style={{ writingMode: 'vertical-lr' }} href='#experience'>
-              <span className="nav-indicator mr-4 h-1/8 border-dashed border-sky-500 border-l-2 transition-all group-hover:h-1/2 group-hover:border-solid group-focus-visible:h-16 group-focus-visible:border-solid motion-reduce:transition-none"></span>
+              <span className="nav-indicator mr-4 h-full border-dashed border-sky-500 border-l-2 transition-all group-hover:border-solid group-focus-visible:h-16 group-focus-visible:border-solid motion-reduce:transition-none"></span>
               <span className="nav-text text-xs uppercase tracking-wides group-hover:text-custom-blue-100 group-focus-visible:text-custom-blue-100">experience</span>
             </a>
           </li>
-             <li className='flex h-1/3'>
+             <li className='flex h-1/8 hover:h-1/2 transition-all'>
             <a className='group flex items-center py-3 flex-col'
               style={{ writingMode: 'vertical-lr' }} href='#projects'>
-              <span className="nav-indicator mr-4 h-1/8 border-dashed border-sky-500 border-l-2 transition-all group-hover:h-1/2 group-hover:border-solid group-focus-visible:h-16 group-focus-visible:border-solid motion-reduce:transition-none"></span>
+              <span className="nav-indicator mr-4 h-full border-dashed border-sky-500 border-l-2 transition-all group-hover:border-solid group-focus-visible:h-16 group-focus-visible:border-solid motion-reduce:transition-none"></span>
               <span className="nav-text text-xs uppercase tracking-wides group-hover:text-custom-blue-100 group-focus-visible:text-custom-blue-100">projects</span>
             </a>
           </li>
