@@ -21,16 +21,18 @@ const Profile = (props: Props) => {
     const index = filters.findIndex(f => f.name === filter.name.toLowerCase())
     filters[index].enabled = !filter.enabled;
     console.log(filters)
-    props.setFilters(filters);
-    setTimeout(() => {
-      console.log(props.filters)
-    }, 300);
+    props.setFilters([...filters]);
   } 
-
-  const FilterComponent = ({ filter, enabled }: { filter: Filter, enabled: boolean }) => {
+  const FilterComponent = ({ filter }: { filter: Filter }) => {
     return (
-      <div onClick={() => toggleFilter(filter)} className={`${filter.name === TAG_ENUM.CLOUD_SERVICES.toLowerCase() ? 'bg-custom-pink-50 text-custom-pink-100' : 'bg-custom-blue-50 text-custom-blue-100'}`}>
-        <span className={`${enabled ? 'no-underline font-bold' : 'line-through font-thin'} capitalize`}>{filter.name}</span>
+      <div onClick={() => toggleFilter(filter)}
+        className={
+          `${filter.name === TAG_ENUM.CLOUD_SERVICES.toLowerCase() ? 'bg-custom-pink-50 text-custom-pink-100' : 'bg-custom-blue-50 text-custom-blue-100'}
+           px-4 py-2 my-3 rounded-full w-fit`
+          }>
+        <span className={`${filter.enabled ? '' : 'line-through'} capitalize text-sm`}>
+          {filter.name}
+        </span>
       </div>
     )
   }
@@ -51,7 +53,7 @@ const Profile = (props: Props) => {
       </div>
       <div className='flex-col flex'>
         {props.filters.map((filter, i) => (
-          <FilterComponent key={filter.name} filter={filter} enabled={filter.enabled} />
+          <FilterComponent key={filter.name} filter={filter} />
       ))}
       </div>
         <div className='text-sm font-light'>
