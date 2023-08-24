@@ -1,22 +1,19 @@
 'use client'
 import Image from 'next/image'
-import about from './info/about.json'
 import experience from './info/experience.json'
 import projects from './info/projects.json'
 import React, { useEffect, useState } from 'react'
-import LinkedIn from './assets/linkedin'
-import GitHub from './assets/github'
+import { NavMenu, Profile } from '@/components'
 
-enum TAG_ENUM {
+export enum TAG_ENUM {
   LANGAUGES = "Languages & Frameworks",
   CLOUD_SERVICES = "Cloud Services"
 };
 
 export default function Home() {
 
-  const [github, setGithub] = useState(false)
-  const [linkedIn, setLinkedIn] = useState(false)
   const [section, setSection] = useState('about')
+  const [filters, setFilters] = useState<Filter[]>([])
   const scrollRef = React.createRef<HTMLDivElement>();
 
   const [aboutHeight, setAboutHeight] = useState(0)
@@ -25,7 +22,6 @@ export default function Home() {
   const aboutRef = React.createRef<HTMLDivElement>();
   const experienceRef = React.createRef<HTMLDivElement>();
   const projectsRef = React.createRef<HTMLDivElement>();
-
 
   const controlNavbar = () => {
     if (scrollRef.current) { 
@@ -49,53 +45,27 @@ export default function Home() {
       setExperienceHeight(experienceRef.current.clientHeight);
       setProjectsHeight(projectsRef.current.clientHeight);
     }
-  }, [aboutRef, experienceRef, projectsRef]);
-  
-  const Profile = () => {
-    return (
-      <div className=' h-2/5 pt-24 justify-between flex flex-col'>
-        <div>
-          <div className='flex flex-row mb-5'>
-            <div>
-              <Image className='rounded-2xl' src='/images/profile.jpg' alt='fromeroad' width={100} height={100} />
-            </div>
-            <div className='flex flex-col ml-3'>
-              <span className='text-4xl font-bold'>{about.name}</span>
-              <span className='text-base font-medium my-1'>{about.position}</span>
-              <span className='font-extralight'>{about.shortBio}</span>
-            </div>
-          </div>
-          {/* <div className=' my-8'>
-            <div className='flex flex-row p-4'>
-              <span className='flex flex-grow mr-8 aspect-square bg-green-400 rounded-2xl'>1</span>
-              <span className='flex flex-grow aspect-square bg-green-400 rounded-2xl'>2</span>
-            </div>
-            <div className='flex flex-row p-4'>
-              <span className='flex flex-grow mr-8 aspect-square bg-green-400 rounded-2xl'>3</span>
-              <span className='flex flex-grow aspect-square bg-green-400 rounded-2xl'>4</span>
-            </div>
-          </div> */}
-        </div>
-        <div className='text-sm font-light'>
-          <p className=' mb-3'>
-            Designed in <a className='hover:text-custom-blue-100 underline' href='https://www.figma.com/' target='_blank'>Figma</a>
-            &nbsp;and developed in <a className='hover:text-custom-blue-100 underline' href="https://code.visualstudio.com/" target='_blank'>VS Code</a>.
-            Frontend is built with <a className='hover:text-custom-blue-100 underline' href="https://nextjs.org/" target='_blank'>Next.js</a>
-            &nbsp;and <a className='hover:text-custom-blue-100 underline' href="https://tailwindcss.com/" target='_blank'>Tailwind CSS.</a>
-          </p>
-          <p>Hosted using <a className='hover:text-custom-blue-100 underline' href="https://aws.amazon.com/amplify/" target='_blank'>AWS Amplify</a>
-            &nbsp;and <a className='hover:text-custom-blue-100 underline' href="https://aws.amazon.com/route53/" target='_blank'>Route 53</a> built with Terraform.</p>
-          <div className='flex flex-row mt-5'>
-            <a className='mr-5 cursor-pointer' href='https://github.com/fhllnd' target='_blank' onMouseEnter={() => setGithub(true)} onMouseLeave={() => setGithub(false)}>
-              <GitHub fill={github ? '#00EEFF' : '#d4d4d4'}/>
-            </a>
-            <a className='mr-5 cursor-pointer' href='https://www.linkedin.com/in/finnholland/' target='_blank' onMouseEnter={() => setLinkedIn(true)} onMouseLeave={() => setLinkedIn(false)}>
-              <LinkedIn fill={linkedIn ? '#00EEFF' : '#d4d4d4'} />
-            </a>
-          </div>
-        </div>
-      </div>
-    )
+    getTags()
+  }, []);
+
+  const getTags = () => {
+    let filters: Filter  [] = []
+    experience.forEach(item => {
+      item.tags.forEach(tagGroup => {
+        if (!filters.find(f => f.name === tagGroup.type.toLowerCase())) {
+          filters.push({ name: tagGroup.type.toLowerCase(), enabled: true })
+        }
+      })
+      console.log(item)
+    });
+    projects.forEach(item => {
+      item.tags.forEach(tagGroup => {
+        if (!filters.find(f => f.name === tagGroup.type.toLowerCase())) {
+          filters.push({ name: tagGroup.type.toLowerCase(), enabled: true })
+        }
+      })
+    });
+    setFilters(filters)
   }
 
   const About = () => { 
@@ -177,7 +147,7 @@ export default function Home() {
   return (
     <div ref={scrollRef} onScroll={controlNavbar} className='bg-blue-950 h-screen w-screen flex flex-row justify-center overflow-auto scroll-smooth'>
       <div className='flex flex-col w-1/5 sticky top-0'>
-        <Profile />
+        <Profile filters={filters} setFilters={setFilters}/>
       </div>
       <div className='flex flex-col w-1/3 px-5'>
         <div ref={aboutRef} id='about' className='flex flex-col w-full mb-8 pt-24'>
@@ -195,31 +165,7 @@ export default function Home() {
         </div>
         <div onClick={() => window.scrollTo(0, 0)}>back to top</div>
       </div>
-      <div className='flex flex-col flex-grow-0 sticky top-0 py-24 justify-between w-8'>
-        <ul className='flex flex-col h-full justify-between'>
-          <li onClick={() => setSection('about')} className={`${section === 'about' ? 'active h-3/4' : 'hover:h-1/2'} flex h-1/6 hover:h-3/4 transition-all`}>
-            <a className='group flex items-center py-3 flex-col'
-              style={{ writingMode: 'vertical-lr' }} href='#about'>
-              <span className={`${section === 'about' ? 'border-solid' : 'border-dashed'} mr-4 border-sky-500 border-l-2 transition-all h-full group-hover:border-solid group-focus-visible:h-16 motion-reduce:transition-none`}></span>
-              <span className={`${section === 'about' ? 'text-custom-blue-100' : ''} text-xs uppercase tracking-wides group-hover:text-custom-blue-100 group-focus-visible:text-custom-blue-100`}>about</span>
-            </a>
-          </li>
-          <li onClick={() => setSection('experience')} className={`${section === 'experience' ? 'active h-3/4' : 'hover:h-1/2'} flex h-1/6 hover:h-3/4 transition-all`}>
-            <a className='group flex items-center py-3 flex-col'
-              style={{ writingMode: 'vertical-lr' }} href='#experience'>
-              <span className={`${section === 'experience' ? 'border-solid' : 'border-dashed'} mr-4 border-sky-500 border-l-2 transition-all h-full group-hover:border-solid group-focus-visible:h-16 motion-reduce:transition-none`}></span>
-              <span className={`${section === 'experience' ? 'text-custom-blue-100' : ''} text-xs uppercase tracking-wides group-hover:text-custom-blue-100 group-focus-visible:text-custom-blue-100`}>experience</span>
-            </a>
-          </li>
-          <li onClick={() => setSection('projects')} className={`${section === 'projects' ? 'active h-3/4' : 'hover:h-1/2'} flex h-1/6 hover:h-3/4 transition-all`}>
-            <a className='group flex items-center py-3 flex-col'
-              style={{ writingMode: 'vertical-lr' }} href='#projects'>
-              <span className={`${section === 'projects' ? 'border-solid' : 'border-dashed'} mr-4 border-sky-500 border-l-2 transition-all h-full group-hover:border-solid group-focus-visible:h-16 motion-reduce:transition-none`}></span>
-              <span className={`${section === 'projects' ? 'text-custom-blue-100' : ''} text-xs uppercase tracking-wides group-hover:text-custom-blue-100 group-focus-visible:text-custom-blue-100`}>projects</span>
-            </a>
-          </li>
-        </ul>
-      </div>
+      <NavMenu section={section} setSection={setSection}/>
     </div>
   )
 }

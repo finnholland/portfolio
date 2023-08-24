@@ -28,3 +28,7 @@ interface TagGroup {
   type: string
   tags: string[]
 }
+interface Filter {
+  name: string
+  enabled: boolean
+}
