@@ -2,6 +2,7 @@
 import Image from 'next/image'
 import experience from './info/experience.json'
 import projects from './info/projects.json'
+import about from './info/about.json'
 import React, { useEffect, useState } from 'react'
 import { NavMenu, Profile } from '@/components'
 import Link from './assets/link'
@@ -73,7 +74,7 @@ export default function Home() {
     return (
       <div className='p-5 pt-0'>
         <span>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi porta consequat nibh, id finibus arcu varius ut. eget orci.
+          {about.about}
         </span>
       </div>
     )
