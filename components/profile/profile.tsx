@@ -31,7 +31,7 @@ const Profile = (props: Props) => {
       <div onClick={() => toggleFilter(filter)}
         className={
           `${cloud ? 'bg-custom-pink-50 text-custom-pink-100' : 'bg-custom-blue-50 text-custom-blue-100'}
-           px-4 py-2 my-3 rounded-full w-fit select-none cursor-pointer flex-row flex`
+           px-4 py-2 my-2 rounded-full w-fit select-none cursor-pointer flex-row flex`
           }>
           <span className={`${filter.enabled ? '' : 'line-through'}  capitalize text-sm mr-1`}>
             {filter.name}
@@ -60,7 +60,7 @@ const Profile = (props: Props) => {
           <FilterComponent key={filter.name} filter={filter} />
       ))}
       </div>
-        <div className='text-sm font-light'>
+        <div className='text-sm font-light mt-5'>
           <p className=' mb-3'>
             Designed in <a className='hover:text-custom-blue-100 underline' href='https://www.figma.com/' target='_blank'>Figma</a>
             &nbsp;and developed in <a className='hover:text-custom-blue-100 underline' href="https://code.visualstudio.com/" target='_blank'>VS Code</a>.
