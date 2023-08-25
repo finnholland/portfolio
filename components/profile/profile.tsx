@@ -28,11 +28,11 @@ const Profile = (props: Props) => {
       <div onClick={() => toggleFilter(filter)}
         className={
           `${filter.name === TAG_ENUM.CLOUD_SERVICES.toLowerCase() ? 'bg-custom-pink-50 text-custom-pink-100' : 'bg-custom-blue-50 text-custom-blue-100'}
-           px-4 py-2 my-3 rounded-full w-fit`
+           px-4 py-2 my-3 rounded-full w-fit select-none cursor-pointer`
           }>
-        <span className={`${filter.enabled ? '' : 'line-through'} capitalize text-sm`}>
-          {filter.name}
-        </span>
+          <span className={`${filter.enabled ? '' : 'line-through'}  capitalize text-sm`}>
+            {filter.name}
+          </span>
       </div>
     )
   }

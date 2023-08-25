@@ -9,14 +9,14 @@ interface Experience {
   title: string
   roles: Role[]
   date: string
-  tags: TagGroup[]
+  tags: Tags[]
   companyUrl: string
 }
 interface Project {
   title: string
   description: string
   imageUrl: string
-  tags: TagGroup[]
+  tags: Tags[]
   githubUrl: string
 }
 interface Role {
@@ -24,9 +24,9 @@ interface Role {
   description: string
 }
 
-interface TagGroup {
+interface Tags {
   type: string
-  tags: string[]
+  name: string
 }
 interface Filter {
   name: string

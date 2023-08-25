@@ -4,34 +4,24 @@
     "description": "Fictional social media platform for the employees of Adelaide's Lot Fourteen on Frome road.Allowing users to post, comment, and share their interests with a weekly points leaderboard. Integrating React, Node Express, MySQL, all hosted on AWS.",
     "imageUrl": "/images/fromeroad.png",
     "tags": [
-      {
-        "type": "Languages & Frameworks",
-        "tags": [
-          "Figma",
-          "Illustrator",
-          "JavaScript",
-          "React",
-          "MySQL",
-          "Express",
-          "Terraform"
-        ]
-      },
-      {
-        "type": "Cloud Services",
-        "tags": [
-          "AWS",
-          "RDS",
-          "ECS",
-          "Route53",
-          "IAM",
-          "ECR",
-          "EC2",
-          "VPC",
-          "S3",
-          "CodePipeline",
-          "Secrets Manager"
-        ]
-      }
+      { "type": "Languages & Frameworks", "name": "Figma" },
+      { "type": "Languages & Frameworks", "name": "Illustrator" },
+      { "type": "Languages & Frameworks", "name": "JavaScript" },
+      { "type": "Languages & Frameworks", "name": "React" },
+      { "type": "Languages & Frameworks", "name": "MySQL" },
+      { "type": "Languages & Frameworks", "name": "Express" },
+      { "type": "Languages & Frameworks", "name": "Terraform" },
+      { "type": "Cloud Services", "name": "AWS" },
+      { "type": "Cloud Services", "name": "RDS" },
+      { "type": "Cloud Services", "name": "ECS" },
+      { "type": "Cloud Services", "name": "Route53" },
+      { "type": "Cloud Services", "name": "IAM" },
+      { "type": "Cloud Services", "name": "ECR" },
+      { "type": "Cloud Services", "name": "EC2" },
+      { "type": "Cloud Services", "name": "VPC" },
+      { "type": "Cloud Services", "name": "S3" },
+      { "type": "Cloud Services", "name": "CodePipeline" },
+      { "type": "Cloud Services", "name": "Secrets Manager" }
     ],
     "githubUrl": "https://github.com/finnholland/fromeroad"
   },
@@ -40,27 +30,17 @@
     "description": "Real-time forum style chat room where all users share the same floor. Utilising Google Firebase snapshots for realtime updates in the database and serving users instantly.",
     "imageUrl": "/images/zeile.png",
     "tags": [
-      {
-        "type": "Languages & Frameworks",
-        "tags": [
-          "Figma",
-          "Illustrator",
-          "JavaScript",
-          "React",
-          "Firebase",
-          "NextJS",
-          "Terraform"
-        ]
-      },
-      {
-        "type": "Cloud Services",
-        "tags": [
-          "Firebase",
-          "Firestore",
-          "Hosting",
-          "Firebase Functions"
-        ]
-      }
+      { "type": "Languages & Frameworks", "name": "Figma" },
+      { "type": "Languages & Frameworks", "name": "Illustrator" },
+      { "type": "Languages & Frameworks", "name": "JavaScript" },
+      { "type": "Languages & Frameworks", "name": "React" },
+      { "type": "Languages & Frameworks", "name": "Firebase" },
+      { "type": "Languages & Frameworks", "name": "NextJS" },
+      { "type": "Languages & Frameworks", "name": "Terraform" },
+      { "type": "Cloud Services", "name": "Firebase" },
+      { "type": "Cloud Services", "name": "Firestore" },
+      { "type": "Cloud Services", "name": "Hosting" },
+      { "type": "Cloud Services", "name": "Firebase Functions" }
     ],
     "githubUrl": "https://github.com/finnholland/zeile"
   }

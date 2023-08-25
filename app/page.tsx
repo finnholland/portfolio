@@ -51,17 +51,16 @@ export default function Home() {
   const getTags = () => {
     let filters: Filter  [] = []
     experience.forEach(item => {
-      item.tags.forEach(tagGroup => {
-        if (!filters.find(f => f.name === tagGroup.type.toLowerCase())) {
-          filters.push({ name: tagGroup.type.toLowerCase(), enabled: true })
+      item.tags.forEach(tag => {
+        if (!filters.find(f => f.name === tag.type.toLowerCase())) {
+          filters.push({ name: tag.type.toLowerCase(), enabled: true })
         }
       })
-      console.log(item)
     });
     projects.forEach(item => {
-      item.tags.forEach(tagGroup => {
-        if (!filters.find(f => f.name === tagGroup.type.toLowerCase())) {
-          filters.push({ name: tagGroup.type.toLowerCase(), enabled: true })
+      item.tags.forEach(tag => {
+        if (!filters.find(f => f.name === tag.type.toLowerCase())) {
+          filters.push({ name: tag.type.toLowerCase(), enabled: true })
         }
       })
     });
@@ -81,13 +80,13 @@ export default function Home() {
   const Experience = ({ experience }: { experience: Experience }) => { 
     return (
       <a key={experience.title} href={experience.companyUrl} target='_blank'
-        className='flex-row flex flex-shrink my-5 p-5 lg:hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:hover:drop-shadow-lg 
+        className='group/experience flex-row flex flex-shrink my-5 p-5 lg:hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:hover:drop-shadow-lg 
         hover:bg-custom-blue-50/20 lg:hover:!opacity-100 lg:group-hover:opacity-50 rounded-2xl'>
         <div className='mr-5 shrink-0 w-24 hover:custom-blue'>
           <span className='font-extralight'>{experience.date}</span>
         </div>
         <div>
-          <p className='font-medium mb-5'>{experience.title}</p>
+          <p className='group-hover/experience:text-custom-blue-100 font-medium mb-5'>{experience.title}</p>
           <span >
             {experience.roles.map((role: Role) => (
               <div key={role.role} className='flex flex-col mb-5'>
@@ -97,9 +96,7 @@ export default function Home() {
             ))}
           </span>
           <div className='flex flex-shrink flex-row flex-wrap'>
-            {experience.tags.map((tagGroup) => (
-              <TagGroup key={tagGroup.type} tagGroup={tagGroup}/>
-            ))}
+            <TagGroup tags={experience.tags}/>
           </div>
         </div>
       </a>
@@ -109,36 +106,37 @@ export default function Home() {
   const Project = ({ project }: {project: Project}) => { 
     return (
       <a key={project.title} href={project.githubUrl} target='_blank'
-        className='cursor-pointer flex-row flex flex-shrink my-5 p-5 lg:hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:hover:drop-shadow-lg hover:bg-custom-blue-50/20 lg:hover:!opacity-100 lg:group-hover:opacity-50 rounded-2xl'>
+        className='group/project cursor-pointer flex-row flex flex-shrink my-5 p-5 lg:hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:hover:drop-shadow-lg hover:bg-custom-blue-50/20 lg:hover:!opacity-100 lg:group-hover:opacity-50 rounded-2xl'>
         <div className='mr-5 shrink-0'>
           <Image className='w-fit h-fit rounded-md' src={project.imageUrl} alt='fromeroad' width={80} height={50} />
         </div>
         <div className='flex-col flex flex-shrink'>
-          <span>{project.title}</span>
+          <span className='group-hover/project:text-custom-blue-100 font-medium mb-5'>{project.title}</span>
           <span className='text-neutral-300 font-extralight'>{project.description}</span>
           <div className='flex flex-shrink flex-row flex-wrap'>
-          {project.tags.map((tagGroup) => (
-            <TagGroup key={tagGroup.type} tagGroup={tagGroup}/>
-          ))}
+            <TagGroup tags={project.tags}/>
           </div>
         </div>
       </a>
     )
   }
 
-  const TagGroup = ({ tagGroup }: { tagGroup: TagGroup }) => { 
+  const TagGroup = ({ tags }: { tags: Tags[] }) => {
+    const sortedTags = tags.sort((a, b) => a.type.localeCompare(b.type))
     return (
       <div className='flex flex-shrink flex-row flex-wrap'>
-        {tagGroup.tags.map((tag) => (
-          <Tag key={tag} tag={tag} cloud={tagGroup.type === TAG_ENUM.CLOUD_SERVICES} />
+        {sortedTags.map((tag) => (
+          <Tag key={tag.name} tag={tag.name} cloud={tag.type === TAG_ENUM.CLOUD_SERVICES} enabled={filters.find(f => f.name === tag.type.toLowerCase())?.enabled || false} />
         ))}
       </div>
     )
   }
 
-  const Tag = ({ tag, cloud }: { tag: string, cloud: boolean }) => {
+  const Tag = ({ tag, cloud, enabled }: { tag: string, cloud: boolean, enabled: boolean }) => {
     return (
-      <span className={`${cloud ? 'bg-custom-pink-50 text-custom-pink-100' : 'bg-custom-blue-50 text-custom-blue-100'} px-3 py-1 text-sm mr-1.5 mt-2 rounded-full`}>
+      <span className={`${cloud ? 'bg-custom-pink-50 text-custom-pink-100' : 'bg-custom-blue-50 text-custom-blue-100'} 
+      ${enabled ? '' : 'hidden'} 
+      px-3 py-1 text-sm mr-1.5 mt-2 rounded-full select-none`}>
         {tag}
       </span>
     )

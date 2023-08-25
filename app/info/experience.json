@@ -13,27 +13,20 @@
     ],
     "date": "2022 - 2023",
     "tags": [
-      {
-        "type": "Languages & Frameworks",
-        "tags": [
-          "Figma", "Angular", "JavaScript", "C#",
-          "MSSQL",
-          "Oracle",
-          "Terraform"
-        ]
-      },
-      {
-        "type": "Cloud Services",
-        "tags": [
-          "Azure",
-          "Container Apps",
-          "Private DNS",
-          "VMs",
-          "Azure SQL",
-          "Function Apps",
-          "VNet"
-        ]
-      }
+      { "type": "Languages & Frameworks", "name": "Figma" },
+      { "type": "Languages & Frameworks", "name": "Angular" },
+      { "type": "Languages & Frameworks", "name": "JavaScript" },
+      { "type": "Languages & Frameworks", "name": "C#" },
+      { "type": "Languages & Frameworks", "name": "MSSQL" },
+      { "type": "Languages & Frameworks", "name": "Oracle" },
+      { "type": "Languages & Frameworks", "name": "Terraform" },
+      { "type": "Cloud Services", "name": "Azure" },
+      { "type": "Cloud Services", "name": "Container Apps" },
+      { "type": "Cloud Services", "name": "Private DNS" },
+      { "type": "Cloud Services", "name": "VMs" },
+      { "type": "Cloud Services", "name": "Azure SQL" },
+      { "type": "Cloud Services", "name": "Function Apps" },
+      { "type": "Cloud Services", "name": "VNet" }
     ],
     "companyUrl": "https://chamonix.com.au"
   },
@@ -47,26 +40,16 @@
     ],
     "date": "2021 - 2022",
     "tags": [
-      {
-        "type": "Languages & Frameworks",
-        "tags": [
-          "Adobe XD",
-          "Angular",
-          "JavaScript",
-          "Java",
-          "Spring MVC",
-          "Neo4j",
-          "React/Native"
-        ]
-      },
-      {
-        "type": "Cloud Services",
-        "tags": [
-          "Firebase",
-          "Firebase Auth",
-          "Firestore"
-        ]
-      }
+      { "type": "Languages & Frameworks", "name": "Adobe XD" },
+      { "type": "Languages & Frameworks", "name": "Angular" },
+      { "type": "Languages & Frameworks", "name": "JavaScript" },
+      { "type": "Languages & Frameworks", "name": "Java" },
+      { "type": "Languages & Frameworks", "name": "Spring MVC" },
+      { "type": "Languages & Frameworks", "name": "Neo4j" },
+      { "type": "Languages & Frameworks", "name": "React/Native" },
+      { "type": "Cloud Services", "name": "Firebase" },
+      { "type": "Cloud Services", "name": "Firebase Auth" },
+      { "type": "Cloud Services", "name": "Firestore" }
     ],
     "companyUrl": "https://dxc.com"
   }
