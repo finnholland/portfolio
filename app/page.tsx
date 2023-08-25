@@ -111,7 +111,7 @@ export default function Home() {
         className='group/project cursor-pointer flex-row flex flex-shrink my-5 p-5 lg:hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:hover:drop-shadow-lg hover:bg-custom-blue-50/20 lg:hover:!opacity-100 lg:group-hover:opacity-50 rounded-2xl'>
         <div className='mr-5 shrink-0'>
           <div className=' w-20 h-14 relative block'>
-            <Image className='group-hover/project:border-custom-blue-100 group-hover/project:border-2 rounded-md object-contain' src={project.imageUrl} fill objectFit='cover' alt={project.title}/>
+            <Image className='group-hover/project:border-custom-blue-100 group-hover/project:border-2 rounded-md object-cover' src={project.imageUrl} fill alt={project.title}/>
           </div>
         </div>
         <div className='flex-col flex flex-shrink'>
