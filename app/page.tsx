@@ -4,6 +4,7 @@ import experience from './info/experience.json'
 import projects from './info/projects.json'
 import React, { useEffect, useState } from 'react'
 import { NavMenu, Profile } from '@/components'
+import Link from './assets/link'
 
 export enum TAG_ENUM {
   LANGAUGES = "Languages & Frameworks",
@@ -14,6 +15,7 @@ export default function Home() {
 
   const [section, setSection] = useState('about')
   const [filters, setFilters] = useState<Filter[]>([])
+  const [resume, setResume] = useState(false)
   const scrollRef = React.createRef<HTMLDivElement>();
 
   const [aboutHeight, setAboutHeight] = useState(0)
@@ -153,11 +155,21 @@ export default function Home() {
         <div ref={aboutRef} id='about' className='flex flex-col w-full mb-8 pt-24'>
           <About />
         </div>
-        <div ref={experienceRef} id='experience' className='group flex flex-col w-full mb-8 pt-14'>
+        <div ref={experienceRef} id='experience' className='group flex flex-col w-full pt-14'>
           {experience.map((item) => (
             <Experience key={item.title} experience={item}/>
           ))}
+
+          
         </div>
+          <div className='flex flex-row mb-8'>
+            <a onMouseEnter={() => setResume(true)} onMouseLeave={() => setResume(false)}
+            className='hover:text-custom-blue-100 ml-5 flex flex-row' href='resume.pdf' target='_blank'>
+              Traditional Resume
+              <Link className='ml-2' fill={resume ? '#00EEFF' : '#fff'} />
+            </a>
+            
+          </div>
         <div ref={projectsRef} id='projects' className='group flex flex-col w-full mb-8 pt-14'>
           {projects.map((item) => (
             <Project key={item.title} project={item}/>

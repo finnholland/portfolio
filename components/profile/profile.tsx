@@ -8,7 +8,6 @@ import EyeOff from '@/app/assets/eyeOff'
 import Eye from '@/app/assets/eye'
 
 
-
 interface Props {
   filters: Filter[]
   setFilters: Dispatch<SetStateAction<Filter[]>>
@@ -58,7 +57,7 @@ const Profile = (props: Props) => {
       <div className='flex-col flex'>
         {props.filters.map((filter, i) => (
           <FilterComponent key={filter.name} filter={filter} />
-      ))}
+        ))}
       </div>
         <div className='text-sm font-light mt-5'>
           <p className=' mb-3'>
