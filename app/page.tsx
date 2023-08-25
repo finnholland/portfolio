@@ -112,7 +112,7 @@ export default function Home() {
         </div>
         <div className='flex-col flex flex-shrink'>
           <span className='group-hover/project:text-custom-blue-100 font-medium mb-5'>{project.title}</span>
-          <span className='text-neutral-300 font-extralight'>{project.description}</span>
+          <span className='text-neutral-300 font-light'>{project.description}</span>
           <div className='flex flex-shrink flex-row flex-wrap'>
             <TagGroup tags={project.tags}/>
           </div>
