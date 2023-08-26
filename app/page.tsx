@@ -26,11 +26,11 @@ export default function Home() {
     if (scrollRef.current) { 
       console.log(scrollRef.current.scrollTop)
       const position = scrollRef.current.scrollTop
-      if (position >= 0 && position <= aboutHeight) { // if scroll down hide the navbar
+      if (position >= 0 && position <= aboutHeight) {
         setSection('about');
       } else if (position >= aboutHeight && position <= experienceHeight+aboutHeight) {
         setSection('experience');
-      } else { // if scroll up show the navbar
+      } else {
         setSection('projects');
       }
     }
