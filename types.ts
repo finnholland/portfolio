@@ -32,3 +32,10 @@ interface Filter {
   name: string
   enabled: boolean
 }
+
+interface TagColours {
+  tagType: string,
+  bg: string,
+  tg: string
+  svgc: string
+};

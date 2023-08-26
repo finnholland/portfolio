@@ -6,11 +6,7 @@ import about from './info/about.json'
 import React, { useEffect, useState } from 'react'
 import { NavMenu, Profile } from '@/components'
 import Link from './assets/link'
-
-export enum TAG_ENUM {
-  LANGAUGES = "Languages & Frameworks",
-  CLOUD_SERVICES = "Cloud Services"
-};
+import { tagColours } from '@/constants'
 
 export default function Home() {
 
@@ -131,17 +127,17 @@ export default function Home() {
     return (
       <div className='flex flex-shrink flex-row flex-wrap'>
         {sortedTags.map((tag) => (
-          <Tag key={tag.name} tag={tag.name} cloud={tag.type === TAG_ENUM.CLOUD_SERVICES} enabled={filters.find(f => f.name === tag.type.toLowerCase())?.enabled || false} />
+          
+          <Tag key={tag.name} tag={tag.name} bgColour={tagColours.find((f) => f.tagType.toLowerCase() === tag.type.toLowerCase())?.bg || ''}
+            tgColour={tagColours.find((f) => f.tagType.toLowerCase() === tag.type.toLowerCase())?.tg || ''} enabled={filters.find(f => f.name === tag.type.toLowerCase())?.enabled || false} />
         ))}
       </div>
     )
   }
 
-  const Tag = ({ tag, cloud, enabled }: { tag: string, cloud: boolean, enabled: boolean }) => {
+  const Tag = ({ tag, enabled, tgColour, bgColour }: { tag: string, enabled: boolean, tgColour: string, bgColour: string }) => {
     return (
-      <span className={`${cloud ? 'bg-custom-pink-50 text-custom-pink-100' : 'bg-custom-blue-50 text-custom-blue-100'} 
-      ${enabled ? '' : 'hidden'} 
-      px-3 py-1 text-sm mr-1.5 mt-2 rounded-full select-none`}>
+      <span className={`${bgColour} ${tgColour} ${enabled ? '' : 'hidden'} px-3 py-1 text-sm mr-1.5 mt-2 rounded-full select-none`}>
         {tag}
       </span>
     )

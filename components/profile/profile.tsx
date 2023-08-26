@@ -3,9 +3,9 @@ import LinkedIn from '../../app/assets/linkedin'
 import GitHub from '../../app/assets/github'
 import about from '../../app/info/about.json'
 import Image from 'next/image'
-import { TAG_ENUM } from '@/app/page'
 import EyeOff from '@/app/assets/eyeOff'
 import Eye from '@/app/assets/eye'
+import { tagColours } from '@/constants'
 
 
 interface Props {
@@ -25,17 +25,16 @@ const Profile = (props: Props) => {
     props.setFilters([...filters]);
   } 
   const FilterComponent = ({ filter }: { filter: Filter }) => {
-    const cloud = filter.name === TAG_ENUM.CLOUD_SERVICES.toLowerCase()
+    const bgColour = tagColours.find((f) => f.tagType.toLowerCase() === filter.name.toLowerCase())?.bg
+    const tgColour = tagColours.find((f) => f.tagType.toLowerCase() === filter.name.toLowerCase())?.tg
+    const svgc = tagColours.find((f) => f.tagType.toLowerCase() === filter.name.toLowerCase())?.svgc
     return (
       <div onClick={() => toggleFilter(filter)}
-        className={
-          `${cloud ? 'bg-custom-pink-50 text-custom-pink-100' : 'bg-custom-blue-50 text-custom-blue-100'}
-           px-4 py-2 my-2 rounded-full w-fit select-none cursor-pointer flex-row flex`
-          }>
-          <span className={`${filter.enabled ? '' : 'line-through'}  capitalize text-sm mr-1`}>
+        className={`${bgColour} ${tgColour} px-4 py-2 my-2 rounded-full w-fit select-none cursor-pointer flex-row flex`}>
+          <span className={`${filter.enabled ? '' : 'line-through'} ${tgColour} capitalize text-sm mr-1`}>
             {filter.name}
         </span>
-        {filter.enabled ? (<Eye fill={cloud ? 'rgb(255 49 197)' : 'rgb(0 238 255)'}/>) : (<EyeOff fill={cloud ? 'rgb(255 49 197)' : 'rgb(0 238 255)'}/>)}
+        {filter.enabled ? (<Eye fill={svgc}/>) : (<EyeOff fill={svgc}/>)}
       </div>
     )
   }
