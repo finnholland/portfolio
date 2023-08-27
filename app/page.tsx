@@ -65,7 +65,7 @@ export default function Home() {
 
   const About = () => { 
     return (
-      <div className='p-5 pt-0'>
+      <div className='px-5'>
         <span>
           {about.about}
         </span>
@@ -176,9 +176,8 @@ export default function Home() {
             <Project key={item.title} project={item}/>
           ))}
         </div>
-        <div onClick={() => window.scrollTo(0, 0)}>back to top</div>
       </div>
-      <NavMenu section={section} setSection={setSection}/>
+      <NavMenu section={section} setSection={setSection} scrollRef={scrollRef} />
     </div>
   )
 }
