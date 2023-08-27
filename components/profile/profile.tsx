@@ -1,10 +1,10 @@
 import React, { Dispatch, SetStateAction, useState } from 'react'
-import LinkedIn from '../../app/assets/linkedin'
-import GitHub from '../../app/assets/github'
+import LinkedIn from '../../app/assets/svgs/linkedin'
+import GitHub from '../../app/assets/svgs/github'
 import about from '../../app/info/about.json'
 import Image from 'next/image'
-import EyeOff from '@/app/assets/eyeOff'
-import Eye from '@/app/assets/eye'
+import EyeOff from '@/app/assets/svgs/eyeOff'
+import Eye from '@/app/assets/svgs/eye'
 import { tagTypes } from '@/constants'
 
 
@@ -54,7 +54,7 @@ const Profile = (props: Props) => {
       <div>
         <div className='flex flex-row mb-5'>
           <div>
-            <Image className='rounded-2xl' src='/profile.jpg' alt='fromeroad' width={100} height={100} />
+            <Image className='rounded-2xl' src='/profile.jpg' alt='profile' width={100} height={100} />
           </div>
           <div className='flex flex-col ml-3'>
             <span className='text-4xl font-bold'>{about.name}</span>
@@ -64,7 +64,7 @@ const Profile = (props: Props) => {
         </div>
       </div>
       <div className='flex-col flex'>
-        {props.filters.map((filter, i) => (
+        {props.filters.map((filter) => (
           <FilterComponent key={filter.name} filter={filter} />
         ))}
       </div>

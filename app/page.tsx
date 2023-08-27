@@ -5,7 +5,7 @@ import projects from './info/projects.json'
 import about from './info/about.json'
 import React, { useEffect, useState } from 'react'
 import { NavMenu, Profile } from '@/components'
-import Link from './assets/link'
+import Link from './assets/svgs/link'
 
 export default function Home() {
 
@@ -165,7 +165,7 @@ export default function Home() {
         </div>
           <div className='flex flex-row mb-8'>
             <a onMouseEnter={() => setResume(true)} onMouseLeave={() => setResume(false)}
-            className='hover:text-custom-blue-100 ml-5 flex flex-row' href='resume.pdf' target='_blank'>
+            className='hover:text-custom-blue-100 ml-5 flex flex-row' href='./resume.pdf' target='_blank'>
               Traditional Resume
               <Link className='ml-2' fill={resume ? '#00EEFF' : '#fff'} />
             </a>
