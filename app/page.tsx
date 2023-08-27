@@ -6,7 +6,6 @@ import about from './info/about.json'
 import React, { useEffect, useState } from 'react'
 import { NavMenu, Profile } from '@/components'
 import Link from './assets/link'
-import { tagColours } from '@/constants'
 
 export default function Home() {
 
@@ -34,8 +33,6 @@ export default function Home() {
         setSection('projects');
       }
     }
-
-    console.log(aboutHeight, experienceHeight, projectsHeight)
   };
 
   useEffect(() => {
@@ -127,20 +124,27 @@ export default function Home() {
     return (
       <div className='flex flex-shrink flex-row flex-wrap'>
         {sortedTags.map((tag) => (
-          
-          <Tag key={tag.name} tag={tag.name} bgColour={tagColours.find((f) => f.tagType.toLowerCase() === tag.type.toLowerCase())?.bg || ''}
-            tgColour={tagColours.find((f) => f.tagType.toLowerCase() === tag.type.toLowerCase())?.tg || ''} enabled={filters.find(f => f.name === tag.type.toLowerCase())?.enabled || false} />
+          <Tag key={tag.name} tag={tag.name} type={tag.type} enabled={filters.find(f => f.name === tag.type.toLowerCase())?.enabled || false} />
         ))}
       </div>
     )
   }
 
-  const Tag = ({ tag, enabled, tgColour, bgColour }: { tag: string, enabled: boolean, tgColour: string, bgColour: string }) => {
-    return (
-      <span className={`${bgColour} ${tgColour} ${enabled ? '' : 'hidden'} px-3 py-1 text-sm mr-1.5 mt-2 rounded-full select-none`}>
-        {tag}
-      </span>
-    )
+  const Tag = ({ tag, enabled, type }: { tag: string, enabled: boolean, type: string }) => {
+    if (type.toLocaleLowerCase() === 'cloud services') {
+      return (
+        <span className={`bg-custom-pink-50 text-custom-pink-100 ${enabled ? '' : 'hidden'} px-3 py-1 text-sm mr-1.5 mt-2 rounded-full select-none`}>
+          {tag}
+        </span>
+      )
+    } else if (type.toLocaleLowerCase() === 'languages & frameworks') {
+      return (
+        <span className={`bg-custom-blue-50 text-custom-blue-100 ${enabled ? '' : 'hidden'} px-3 py-1 text-sm mr-1.5 mt-2 rounded-full select-none`}>
+          {tag}
+        </span>
+      )
+    }
+    return
   }
 
   return (

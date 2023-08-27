@@ -5,6 +5,7 @@ import about from '../../app/info/about.json'
 import Image from 'next/image'
 import EyeOff from '@/app/assets/eyeOff'
 import Eye from '@/app/assets/eye'
+import { tagTypes } from '@/constants'
 
 
 interface Props {
@@ -15,20 +16,7 @@ const Profile = (props: Props) => {
 
   const [github, setGithub] = useState(false)
   const [linkedIn, setLinkedIn] = useState(false)
-const tagColours: TagColours[] = [
-  {
-    tagType: 'Cloud Services',
-    bg: 'bg-custom-pink-50',
-    tg: 'text-custom-pink-100',
-    svgc: '#FF31C5'
-  },
-  {
-    tagType: 'Languages & Frameworks',
-    bg: 'bg-custom-blue-50',
-    tg: 'text-custom-blue-100',
-    svgc: '#00EEFF'
-  }
-]
+
   const toggleFilter = (filter: Filter) => {
     let filters = props.filters;
     const index = filters.findIndex(f => f.name === filter.name.toLowerCase())
@@ -37,18 +25,28 @@ const tagColours: TagColours[] = [
     props.setFilters([...filters]);
   } 
   const FilterComponent = ({ filter }: { filter: Filter }) => {
-    const bgColour = tagColours.find((f) => f.tagType.toLowerCase() === filter.name.toLowerCase())?.bg
-    const tgColour = tagColours.find((f) => f.tagType.toLowerCase() === filter.name.toLowerCase())?.tg
-    const svgc = tagColours.find((f) => f.tagType.toLowerCase() === filter.name.toLowerCase())?.svgc
-    return (
-      <div onClick={() => toggleFilter(filter)}
-        className={`${bgColour} ${tgColour} px-4 py-2 my-2 rounded-full w-fit select-none cursor-pointer flex-row flex`}>
-          <span className={`${filter.enabled ? '' : 'line-through'} ${tgColour} capitalize text-sm mr-1`}>
-            {filter.name}
-        </span>
-        {filter.enabled ? (<Eye fill={svgc}/>) : (<EyeOff fill={svgc}/>)}
-      </div>
-    )
+    if (filter.name === tagTypes.cloud) {
+      return (
+        <div onClick={() => toggleFilter(filter)}
+          className={`bg-custom-pink-50 text-custom-pink-100 px-4 py-2 my-2 rounded-full w-fit select-none cursor-pointer flex-row flex`}>
+            <span className={`${filter.enabled ? '' : 'line-through'} text-custom-pink-100 capitalize text-sm mr-1`}>
+              {filter.name}
+          </span>
+          {filter.enabled ? (<Eye fill={'#FF31C5'}/>) : (<EyeOff fill={'#FF31C5'}/>)}
+        </div>
+      )
+    } else if (filter.name === tagTypes.language) {
+      return (
+        <div onClick={() => toggleFilter(filter)}
+          className={`bg-custom-blue-50 text-custom-blue-100 px-4 py-2 my-2 rounded-full w-fit select-none cursor-pointer flex-row flex`}>
+            <span className={`${filter.enabled ? '' : 'line-through'} text-custom-blue-100 capitalize text-sm mr-1`}>
+              {filter.name}
+          </span>
+          {filter.enabled ? (<Eye fill={'#00EEFF'}/>) : (<EyeOff fill={'#00EEFF'}/>)}
+        </div>
+      )
+    }
+    return
   }
 
   return (
