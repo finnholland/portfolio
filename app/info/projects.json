@@ -1,7 +1,7 @@
 [
   {
     "title": "fromeroad",
-    "description": "Fictional social media platform for the employees of Adelaide's Lot Fourteen on Frome road.Allowing users to post, comment, and share their interests with a weekly points leaderboard. Integrating React, Node Express, MySQL, all hosted on AWS.",
+    "description": "Fictional social media platform for the employees of Adelaide's Lot Fourteen on Frome Road. Allowing users to post, comment, and share their interests with a weekly points leaderboard. Integrating React, Node Express, MySQL, all hosted on AWS.",
     "imageUrl": "/fromeroad.png",
     "tags": [
       { "type": "Languages & Frameworks", "name": "Figma" },
@@ -27,7 +27,7 @@
   },
   {
     "title": "zeile",
-    "description": "Real-time forum style chat room where all users share the same floor. Utilising Google Firebase snapshots for realtime updates in the database and serving users instantly.",
+    "description": "Real-time forum style chat room where all users share the same floor. Utilising Google Firebase snapshots for real-time updates in the database and serving users instantly.",
     "imageUrl": "/zeile.png",
     "tags": [
       { "type": "Languages & Frameworks", "name": "Figma" },
