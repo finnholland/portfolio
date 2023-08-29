@@ -1,7 +1,7 @@
 [
   {
     "title": "fromeroad",
-    "description": "Fictional social media platform for the employees of Adelaide's Lot Fourteen on Frome Road. Allowing users to post, comment, and share their interests with a weekly points leaderboard. Integrating React, Node Express, MySQL, all hosted on AWS.",
+    "description": "Fictional social media platform for the employees of Adelaide's Lot Fourteen on Frome Road. Integrating React, Node Express, MySQL, all hosted on AWS.",
     "imageUrl": "/fromeroad.png",
     "tags": [
       { "type": "Languages & Frameworks", "name": "Figma" },
@@ -12,6 +12,7 @@
       { "type": "Languages & Frameworks", "name": "Express" },
       { "type": "Languages & Frameworks", "name": "Terraform" },
       { "type": "Cloud Services", "name": "AWS" },
+      { "type": "Cloud Services", "name": "Amplify" },
       { "type": "Cloud Services", "name": "RDS" },
       { "type": "Cloud Services", "name": "ECS" },
       { "type": "Cloud Services", "name": "Route53" },
@@ -43,5 +44,22 @@
       { "type": "Cloud Services", "name": "Firebase Functions" }
     ],
     "githubUrl": "https://github.com/finnholland/zeile"
+  },
+  {
+    "title": "Portfolio",
+    "description": "Personal portfolio website for showcasing experience and projects to potential employers. ",
+    "imageUrl": "/portfolio.png",
+    "tags": [
+      { "type": "Languages & Frameworks", "name": "NextJS" },
+      { "type": "Languages & Frameworks", "name": "Figma" },
+      { "type": "Languages & Frameworks", "name": "JavaScript" },
+      { "type": "Languages & Frameworks", "name": "React" },
+      { "type": "Languages & Frameworks", "name": "Terraform" },
+      { "type": "Cloud Services", "name": "AWS" },
+      { "type": "Cloud Services", "name": "Amplify" },
+      { "type": "Cloud Services", "name": "Route53" },
+      { "type": "Cloud Services", "name": "Google Domains" }
+    ],
+    "githubUrl": "https://github.com/finnholland/portfolio"
   }
 ]

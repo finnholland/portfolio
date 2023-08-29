@@ -22,6 +22,9 @@ const config: Config = {
           50: '#5C336E',
           100: '#FF31C5'
         },
+        'neutral': {
+          350: '#c0c0c0',
+        },
       },
       maxWidth: {
         '1/4': '25%',

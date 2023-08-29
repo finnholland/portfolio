@@ -76,7 +76,7 @@ const Profile = (props: Props) => {
             &nbsp;and <a className='hover:text-custom-blue-100 underline' href="https://tailwindcss.com/" target='_blank'>Tailwind CSS.</a>
           </p>
           <p>Hosted using <a className='hover:text-custom-blue-100 underline' href="https://aws.amazon.com/amplify/" target='_blank'>AWS Amplify</a>
-            &nbsp;and <a className='hover:text-custom-blue-100 underline' href="https://aws.amazon.com/route53/" target='_blank'>Route 53</a> built with Terraform.</p>
+            &nbsp;and <a className='hover:text-custom-blue-100 underline' href="https://aws.amazon.com/route53/" target='_blank'>Route 53</a> built with <a className='hover:text-custom-blue-100 underline' href="https://www.terraform.io/" target='_blank'>Terraform</a>.</p>
           <div className='flex flex-row mt-5'>
             <a className='mr-5 cursor-pointer' href='https://github.com/fhllnd' target='_blank' onMouseEnter={() => setGithub(true)} onMouseLeave={() => setGithub(false)}>
               <GitHub fill={github ? '#00EEFF' : '#d4d4d4'}/>

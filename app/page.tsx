@@ -6,6 +6,7 @@ import about from './info/about.json'
 import React, { useEffect, useState } from 'react'
 import { NavMenu, Profile } from '@/components'
 import Link from './assets/svgs/link'
+import * as DOMPurify from 'dompurify';
 
 export default function Home() {
 
@@ -64,11 +65,10 @@ export default function Home() {
   }
 
   const About = () => { 
+    const clean = DOMPurify.sanitize(about.about, { USE_PROFILES: { html: true }, ALLOWED_TAGS: ['className', 'a'], ADD_ATTR: ['target', 'className'] });
     return (
       <div className='px-5'>
-        <span>
-          {about.about}
-        </span>
+        <span className='text-neutral-350 whitespace-pre-line aboutLinks' dangerouslySetInnerHTML={{__html: clean}}/>
       </div>
     )
   }
@@ -87,7 +87,7 @@ export default function Home() {
             {experience.roles.map((role: Role) => (
               <div key={role.role} className='flex flex-col mb-5'>
                 <span>{role.role}</span>
-                <span className='text-neutral-300 font-light'>{role.description}</span>
+                <span className='text-neutral-350 font-light'>{role.description}</span>
               </div>
             ))}
           </span>
@@ -109,8 +109,8 @@ export default function Home() {
           </div>
         </div>
         <div className='flex-col flex flex-shrink'>
-          <span className='group-hover/project:text-custom-blue-100 font-medium mb-5'>{project.title}</span>
-          <span className='text-neutral-300 font-light'>{project.description}</span>
+          <span className='group-hover/project:text-custom-blue-100 font-medium mb-2'>{project.title}</span>
+          <span className='text-neutral-350 font-light'>{project.description}</span>
           <div className='flex flex-shrink flex-row flex-wrap'>
             <TagGroup tags={project.tags}/>
           </div>
@@ -165,7 +165,7 @@ export default function Home() {
         </div>
           <div className='flex flex-row mb-8'>
             <a onMouseEnter={() => setResume(true)} onMouseLeave={() => setResume(false)}
-            className='hover:text-custom-blue-100 ml-5 flex flex-row' href='./resume.pdf' target='_blank'>
+            className='hover:text-custom-blue-100 ml-5 flex flex-row' href='./Holland - Resume.pdf' target='_blank'>
               Traditional Resumé
               <Link className='ml-2' fill={resume ? '#00EEFF' : '#fff'} />
             </a>

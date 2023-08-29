@@ -25,3 +25,12 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+.aboutLinks a:hover {
+  color: #00EEFF;
+  text-decoration: underline;
+}
+.aboutLinks a, a:visited {
+  color: #fff;
+  text-decoration: underline;
+}
