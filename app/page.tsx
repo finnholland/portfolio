@@ -6,7 +6,7 @@ import about from './info/about.json'
 import React, { useEffect, useState } from 'react'
 import { NavMenu, Profile } from '@/components'
 import Link from './assets/svgs/link'
-import * as DOMPurify from 'dompurify';
+import { sanitize } from 'isomorphic-dompurify';
 
 export default function Home() {
 
@@ -65,7 +65,7 @@ export default function Home() {
   }
 
   const About = () => { 
-    const clean = DOMPurify.sanitize(about.about, { USE_PROFILES: { html: true }, ALLOWED_TAGS: ['className', 'a'], ADD_ATTR: ['target', 'className'] });
+    const clean = sanitize(about.about, { USE_PROFILES: { html: true }, ALLOWED_TAGS: ['className', 'a'], ADD_ATTR: ['target', 'className'] });
     return (
       <div className='px-5'>
         <span className='text-neutral-350 whitespace-pre-line aboutLinks' dangerouslySetInnerHTML={{__html: clean}}/>
