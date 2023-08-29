@@ -104,7 +104,7 @@ export default function Home() {
       <a key={project.title} href={project.githubUrl} target='_blank'
         className='group/project cursor-pointer flex-row flex flex-shrink my-5 p-5 lg:hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:hover:drop-shadow-lg hover:bg-custom-blue-50/20 lg:hover:!opacity-100 lg:group-hover:opacity-50 rounded-2xl'>
         <div className='mr-5 shrink-0'>
-          <div className=' w-20 h-14 relative block'>
+          <div className=' w-32 h-20 relative block'>
             <Image className='group-hover/project:border-custom-blue-100 group-hover/project:border-2 rounded-md object-cover' src={project.imageUrl} fill alt={project.title}/>
           </div>
         </div>
@@ -148,7 +148,7 @@ export default function Home() {
   }
 
   return (
-    <div ref={scrollRef} onScroll={controlNavbar} className='bg-blue-950 h-screen w-screen flex flex-row justify-center overflow-auto scroll-smooth'>
+    <div ref={scrollRef} onScroll={controlNavbar} className='bg-custom-blue-1000 h-screen w-screen flex flex-row justify-center overflow-auto scroll-smooth'>
       <div className='flex flex-col w-1/5 sticky top-0'>
         <Profile filters={filters} setFilters={setFilters}/>
       </div>

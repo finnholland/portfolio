@@ -6,12 +6,13 @@ import Image from 'next/image'
 import EyeOff from '@/app/assets/svgs/eyeOff'
 import Eye from '@/app/assets/svgs/eye'
 import { tagTypes } from '@/constants'
-
+import { sanitize } from 'isomorphic-dompurify';
 
 interface Props {
   filters: Filter[]
   setFilters: Dispatch<SetStateAction<Filter[]>>
 }
+const clean = sanitize(about.position, { USE_PROFILES: { html: true }, ALLOWED_TAGS: ['className', 'a'], ADD_ATTR: ['target', 'className'] });
 const Profile = (props: Props) => {
 
   const [github, setGithub] = useState(false)
@@ -58,7 +59,7 @@ const Profile = (props: Props) => {
           </div>
           <div className='flex flex-col ml-3'>
             <span className='text-4xl font-bold'>{about.name}</span>
-            <span className='text-base font-medium my-1'>{about.position}</span>
+            <span className='text-base font-medium my-1' dangerouslySetInnerHTML={{__html: clean}}/>
             <span className='font-extralight'>{about.shortBio}</span>
           </div>
         </div>
@@ -68,15 +69,20 @@ const Profile = (props: Props) => {
           <FilterComponent key={filter.name} filter={filter} />
         ))}
       </div>
-        <div className='text-sm font-light mt-5'>
-          <p className=' mb-3'>
-            Designed in <a className='hover:text-custom-blue-100 underline' href='https://www.figma.com/' target='_blank'>Figma</a>
-            &nbsp;and developed in <a className='hover:text-custom-blue-100 underline' href="https://code.visualstudio.com/" target='_blank'>VS Code</a>.
-            Frontend is built with <a className='hover:text-custom-blue-100 underline' href="https://nextjs.org/" target='_blank'>Next.js</a>
-            &nbsp;and <a className='hover:text-custom-blue-100 underline' href="https://tailwindcss.com/" target='_blank'>Tailwind CSS.</a>
-          </p>
-          <p>Hosted using <a className='hover:text-custom-blue-100 underline' href="https://aws.amazon.com/amplify/" target='_blank'>AWS Amplify</a>
-            &nbsp;and <a className='hover:text-custom-blue-100 underline' href="https://aws.amazon.com/route53/" target='_blank'>Route 53</a> built with <a className='hover:text-custom-blue-100 underline' href="https://www.terraform.io/" target='_blank'>Terraform</a>.</p>
+      <div className='text-sm font-light mt-5'>
+        <p>
+          Designed in <a className='hover:text-custom-blue-100 underline' href='https://www.figma.com/' target='_blank'>Figma</a>
+          &nbsp;and developed in <a className='hover:text-custom-blue-100 underline' href="https://code.visualstudio.com/" target='_blank'>VS Code</a>.
+          Frontend is built with <a className='hover:text-custom-blue-100 underline' href="https://nextjs.org/" target='_blank'>Next.js</a>
+          &nbsp;and <a className='hover:text-custom-blue-100 underline' href="https://tailwindcss.com/" target='_blank'>Tailwind CSS.</a>
+        </p>
+        <p className='my-3'>
+          Hosted using <a className='hover:text-custom-blue-100 underline' href="https://aws.amazon.com/amplify/" target='_blank'>AWS Amplify</a>
+          &nbsp;and <a className='hover:text-custom-blue-100 underline' href="https://aws.amazon.com/route53/" target='_blank'>Route 53</a> built with <a className='hover:text-custom-blue-100 underline' href="https://www.terraform.io/" target='_blank'>Terraform</a>.
+        </p>
+        <p>
+          Inspired by <a className='hover:text-custom-blue-100 underline' href="https://brittanychiang.com/" target='_blank'>brittanychiang.com</a>
+        </p>
           <div className='flex flex-row mt-5'>
             <a className='mr-5 cursor-pointer' href='https://github.com/fhllnd' target='_blank' onMouseEnter={() => setGithub(true)} onMouseLeave={() => setGithub(false)}>
               <GitHub fill={github ? '#00EEFF' : '#d4d4d4'}/>

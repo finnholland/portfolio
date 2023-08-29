@@ -16,7 +16,8 @@ const config: Config = {
       colors: {
         'custom-blue': {
           50: '#174879',
-          100: '#00EEFF'
+          100: '#00EEFF',
+          1000: '#1B2339'
         },
         'custom-pink': {
           50: '#5C336E',
