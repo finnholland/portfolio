@@ -1,5 +1,24 @@
 [
   {
+    "title": "Sagas",
+    "description": "Personal blog website where I post updates about projects or interests I partake in. The project is built on AWS serverless tech like Lambda, DynamoDB",
+    "imageUrl": "/sagas.png",
+    "tags": [
+      { "type": "Languages & Frameworks", "name": "Figma" },
+      { "type": "Languages & Frameworks", "name": "JavaScript" },
+      { "type": "Languages & Frameworks", "name": "React" },
+      { "type": "Languages & Frameworks", "name": "Python" },
+      { "type": "Languages & Frameworks", "name": "NoSQL" },
+      { "type": "Languages & Frameworks", "name": "Terraform" },
+      { "type": "Cloud Services", "name": "AWS" },
+      { "type": "Cloud Services", "name": "Amplify" },
+      { "type": "Cloud Services", "name": "DynamoDB" },
+      { "type": "Cloud Services", "name": "Lambda" },
+      { "type": "Cloud Services", "name": "Cognito" }
+    ],
+    "githubUrl": "https://github.com/finnholland/sagas"
+  },
+  {
     "title": "fromeroad",
     "description": "Fictional social media platform for the employees of Adelaide's Lot Fourteen on Frome Road. Integrating React, Node Express, MySQL, all hosted on AWS.",
     "imageUrl": "/fromeroad.png",
