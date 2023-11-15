@@ -7,6 +7,7 @@ import EyeOff from '@/app/assets/svgs/eyeOff'
 import Eye from '@/app/assets/svgs/eye'
 import { tagTypes } from '@/constants'
 import { sanitize } from 'isomorphic-dompurify';
+import Sagas from '@/app/assets/svgs/sagas'
 
 interface Props {
   filters: Filter[]
@@ -17,6 +18,7 @@ const Profile = (props: Props) => {
 
   const [github, setGithub] = useState(false)
   const [linkedIn, setLinkedIn] = useState(false)
+  const [sagas, setSagas] = useState(false)
 
   const toggleFilter = (filter: Filter) => {
     let filters = props.filters;
@@ -84,11 +86,15 @@ const Profile = (props: Props) => {
           Inspired by <a className='hover:text-custom-blue-100 underline' href="https://brittanychiang.com/" target='_blank'>brittanychiang.com</a>
         </p>
           <div className='flex flex-row mt-5'>
-            <a className='mr-5 cursor-pointer' href='https://github.com/fhllnd' target='_blank' onMouseEnter={() => setGithub(true)} onMouseLeave={() => setGithub(false)}>
-              <GitHub fill={github ? '#00EEFF' : '#d4d4d4'}/>
+            <a className='mr-5 cursor-pointer' href='https://sagas.finnholland.dev/' target='_blank'
+              onMouseEnter={() => setSagas(true)} onMouseLeave={() => setSagas(false)}>
+              <Sagas aria-atomic={sagas} height={25} width={25}/>
+            </a>
+            <a className='mr-5 cursor-pointer' href='https://github.com/finnholland' target='_blank' onMouseEnter={() => setGithub(true)} onMouseLeave={() => setGithub(false)}>
+              <GitHub aria-atomic={github} height={25}/>
             </a>
             <a className='mr-5 cursor-pointer' href='https://www.linkedin.com/in/finnholland/' target='_blank' onMouseEnter={() => setLinkedIn(true)} onMouseLeave={() => setLinkedIn(false)}>
-              <LinkedIn fill={linkedIn ? '#00EEFF' : '#d4d4d4'} />
+              <LinkedIn height={25} aria-atomic={linkedIn} />
             </a>
           </div>
         </div>
