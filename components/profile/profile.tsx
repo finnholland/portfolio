@@ -24,7 +24,6 @@ const Profile = (props: Props) => {
     let filters = props.filters;
     const index = filters.findIndex(f => f.name === filter.name.toLowerCase())
     filters[index].enabled = !filter.enabled;
-    console.log(filters)
     props.setFilters([...filters]);
   } 
   const FilterComponent = ({ filter }: { filter: Filter }) => {

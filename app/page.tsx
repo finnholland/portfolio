@@ -24,7 +24,6 @@ export default function Home() {
 
   const controlNavbar = () => {
     if (scrollRef.current) { 
-      console.log(scrollRef.current.scrollTop)
       const position = scrollRef.current.scrollTop
       if (position >= 0 && position <= aboutHeight) {
         setSection('about');
