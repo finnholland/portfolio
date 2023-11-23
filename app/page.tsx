@@ -165,7 +165,7 @@ export default function Home() {
         </div>
           <div className='flex flex-row mb-8'>
             <a onMouseEnter={() => setResume(true)} onMouseLeave={() => setResume(false)}
-            className='hover:text-custom-blue-100 ml-5 flex flex-row' href='./Holland - Resume.pdf' target='_blank'>
+            className='hover:text-custom-blue-100 ml-5 flex flex-row' href='https://finnholland.s3.ap-southeast-2.amazonaws.com/Finn_Holland_CV.pdf' target='_blank'>
               Traditional Resumé
               <Link className='ml-2' fill={resume ? '#00EEFF' : '#fff'} />
             </a>
