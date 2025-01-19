@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "deploy": "aws s3 sync ./out s3://www.finnholland.dev --delete",
+    "bnd": "npm run build && npm run deploy"
   },
   "dependencies": {
     "@types/node": "20.4.10",

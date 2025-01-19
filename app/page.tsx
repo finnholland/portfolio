@@ -1,8 +1,8 @@
 'use client'
 import Image from 'next/image'
-import experience from './info/experience.json'
-import projects from './info/projects.json'
-import about from './info/about.json'
+import experience from '../public/info/experience.json'
+import projects from '../public/info/projects.json'
+import about from '../public/info/about.json'
 import React, { useEffect, useState } from 'react'
 import { NavMenu, Profile } from '@/components'
 import Link from './assets/svgs/link'
@@ -23,11 +23,11 @@ export default function Home() {
   const projectsRef = React.createRef<HTMLDivElement>();
 
   const controlNavbar = () => {
-    if (scrollRef.current) { 
+    if (scrollRef.current) {
       const position = scrollRef.current.scrollTop
       if (position >= 0 && position <= aboutHeight) {
         setSection('about');
-      } else if (position >= aboutHeight && position <= experienceHeight+aboutHeight) {
+      } else if (position >= aboutHeight && position <= experienceHeight + aboutHeight) {
         setSection('experience');
       } else {
         setSection('projects');
@@ -45,7 +45,7 @@ export default function Home() {
   }, []);
 
   const getTags = () => {
-    let filters: Filter  [] = []
+    let filters: Filter[] = []
     experience.forEach(item => {
       item.tags.forEach(tag => {
         if (!filters.find(f => f.name === tag.type.toLowerCase())) {
@@ -63,16 +63,16 @@ export default function Home() {
     setFilters(filters)
   }
 
-  const About = () => { 
+  const About = () => {
     const clean = sanitize(about.about, { USE_PROFILES: { html: true }, ALLOWED_TAGS: ['className', 'a'], ADD_ATTR: ['target', 'className'] });
     return (
       <div className='px-5'>
-        <span className='text-neutral-350 whitespace-pre-line aboutLinks' dangerouslySetInnerHTML={{__html: clean}}/>
+        <span className='text-neutral-350 whitespace-pre-line aboutLinks' dangerouslySetInnerHTML={{ __html: clean }} />
       </div>
     )
   }
 
-  const Experience = ({ experience }: { experience: Experience }) => { 
+  const Experience = ({ experience }: { experience: Experience }) => {
     return (
       <a key={experience.title} href={experience.companyUrl} target='_blank'
         className='group/experience flex-row flex flex-shrink my-5 p-5 lg:hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:hover:drop-shadow-lg 
@@ -91,27 +91,27 @@ export default function Home() {
             ))}
           </span>
           <div className='flex flex-shrink flex-row flex-wrap'>
-            <TagGroup tags={experience.tags}/>
+            <TagGroup tags={experience.tags} />
           </div>
         </div>
       </a>
     )
   }
 
-  const Project = ({ project }: {project: Project}) => { 
+  const Project = ({ project }: { project: Project }) => {
     return (
       <a key={project.title} href={project.githubUrl} target='_blank'
         className='group/project cursor-pointer flex-row flex flex-shrink my-5 p-5 lg:hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:hover:drop-shadow-lg hover:bg-custom-blue-50/20 lg:hover:!opacity-100 lg:group-hover:opacity-50 rounded-2xl'>
         <div className='mr-5 shrink-0'>
           <div className=' w-32 h-20 relative block'>
-            <Image className='group-hover/project:border-custom-blue-100 group-hover/project:border-2 rounded-md object-cover' src={project.imageUrl} fill alt={project.title}/>
+            <Image className='group-hover/project:border-custom-blue-100 group-hover/project:border-2 rounded-md object-cover' src={project.imageUrl} fill alt={project.title} />
           </div>
         </div>
         <div className='flex-col flex flex-shrink'>
           <span className='group-hover/project:text-custom-blue-100 font-medium mb-2'>{project.title}</span>
           <span className='text-neutral-350 font-light'>{project.description}</span>
           <div className='flex flex-shrink flex-row flex-wrap'>
-            <TagGroup tags={project.tags}/>
+            <TagGroup tags={project.tags} />
           </div>
         </div>
       </a>
@@ -149,7 +149,7 @@ export default function Home() {
   return (
     <div ref={scrollRef} onScroll={controlNavbar} className='bg-custom-blue-1000 h-screen w-screen flex flex-row justify-center overflow-auto scroll-smooth'>
       <div className='flex flex-col w-1/5 sticky top-0'>
-        <Profile filters={filters} setFilters={setFilters}/>
+        <Profile filters={filters} setFilters={setFilters} />
       </div>
       <div className='flex flex-col w-1/3 px-5'>
         <div ref={aboutRef} id='about' className='flex flex-col w-full mb-8 pt-24'>
@@ -157,22 +157,22 @@ export default function Home() {
         </div>
         <div ref={experienceRef} id='experience' className='group flex flex-col w-full pt-14'>
           {experience.map((item) => (
-            <Experience key={item.title} experience={item}/>
+            <Experience key={item.title} experience={item} />
           ))}
 
-          
+
         </div>
-          <div className='flex flex-row mb-8'>
-            <a onMouseEnter={() => setResume(true)} onMouseLeave={() => setResume(false)}
-            className='hover:text-custom-blue-100 ml-5 flex flex-row' href='https://finnholland.s3.ap-southeast-2.amazonaws.com/Finn_Holland_CV.pdf' target='_blank'>
-              Traditional Resumé
-              <Link className='ml-2' fill={resume ? '#00EEFF' : '#fff'} />
-            </a>
-            
-          </div>
+        <div className='flex flex-row mb-8'>
+          <a onMouseEnter={() => setResume(true)} onMouseLeave={() => setResume(false)}
+            className='hover:text-custom-blue-100 ml-5 flex flex-row' href='Finn_Holland_CV.pdf' target='_blank'>
+            Traditional Resumé
+            <Link className='ml-2' fill={resume ? '#00EEFF' : '#fff'} />
+          </a>
+
+        </div>
         <div ref={projectsRef} id='projects' className='group flex flex-col w-full mb-8 pt-14'>
           {projects.map((item) => (
-            <Project key={item.title} project={item}/>
+            <Project key={item.title} project={item} />
           ))}
         </div>
       </div>

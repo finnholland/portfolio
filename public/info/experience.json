@@ -1,0 +1,185 @@
+[
+  {
+    "title": "DevOps Engineer · Aligent",
+    "roles": [
+      {
+        "role": "DevOps Engineer",
+        "description": "Developed internal tools which assisted developers to deliver products and results faster and more effectively. Interfaced with large scale clients to ensure their cloud infrastructure was tailored perfectly to their requirements and could handle the anticipated traffic. Utilised AWS CDK to develop reusable modules and BitBucket CI/CD to enforce company-wide coding standards."
+      }
+    ],
+    "date": "2024 - Present",
+    "tags": [
+      {
+        "type": "Languages & Frameworks",
+        "name": "Typescript"
+      },
+      {
+        "type": "Languages & Frameworks",
+        "name": "Python"
+      },
+      {
+        "type": "Languages & Frameworks",
+        "name": "Oclif"
+      },
+      {
+        "type": "Languages & Frameworks",
+        "name": "AWS CDK"
+      },
+      {
+        "type": "Cloud Services",
+        "name": "AWS"
+      },
+      {
+        "type": "Cloud Services",
+        "name": "Kubernetes"
+      },
+      {
+        "type": "Cloud Services",
+        "name": "Docker"
+      },
+      {
+        "type": "Cloud Services",
+        "name": "Adobe Magento"
+      },
+      {
+        "type": "Cloud Services",
+        "name": "Atlassian Suite"
+      },
+      {
+        "type": "Cloud Services",
+        "name": "BitBucket Pipelines"
+      },
+      {
+        "type": "Cloud Services",
+        "name": "GitHub Actions"
+      }
+    ],
+    "companyUrl": "https://www.aligent.com.au/"
+  },
+  {
+    "title": "Full Stack Developer · Graduate at Chamonix IT",
+    "roles": [
+      {
+        "role": "Cloud Engineer - 6 Months",
+        "description": "Utilised Terraform for Azure cloud to deliver a highly scalable solution for National Pharmacies, deployed in one click.\nMaintained cloud infrastructure ensuring best security practices by leveraging Prisma vulnerability scanning.\nDeveloped Azure PowerShell scripts to assist in automation for Azure resources.\nIntegrated the client onto the cloud, seamlessly transitioning their data away from on premises.\nDeveloped and deployed changes in C# APIs and MSSQL databases."
+      },
+      {
+        "role": "UI/UX & Front End Developer - 12 Months",
+        "description": "Led UI/UX Design in Figma for SAHealth adhering to client requirements, resulting in end-user centric interfaces.\nDeveloped an Angular front end to deliver a user-friendly experience and integrated it with a MSSQL and C# backend.\nAssisted with the development of MSSQL and C# API integration."
+      }
+    ],
+    "date": "2022 - 2023",
+    "tags": [
+      {
+        "type": "Languages & Frameworks",
+        "name": "Figma"
+      },
+      {
+        "type": "Languages & Frameworks",
+        "name": "Angular"
+      },
+      {
+        "type": "Languages & Frameworks",
+        "name": "JavaScript"
+      },
+      {
+        "type": "Languages & Frameworks",
+        "name": "C#"
+      },
+      {
+        "type": "Languages & Frameworks",
+        "name": "MSSQL"
+      },
+      {
+        "type": "Languages & Frameworks",
+        "name": "Oracle"
+      },
+      {
+        "type": "Languages & Frameworks",
+        "name": "Terraform"
+      },
+      {
+        "type": "Cloud Services",
+        "name": "Azure"
+      },
+      {
+        "type": "Cloud Services",
+        "name": "Container Apps"
+      },
+      {
+        "type": "Cloud Services",
+        "name": "Private DNS"
+      },
+      {
+        "type": "Cloud Services",
+        "name": "VMs"
+      },
+      {
+        "type": "Cloud Services",
+        "name": "Azure SQL"
+      },
+      {
+        "type": "Cloud Services",
+        "name": "Function Apps"
+      },
+      {
+        "type": "Cloud Services",
+        "name": "VNet"
+      }
+    ],
+    "companyUrl": "https://chamonix.com.au"
+  },
+  {
+    "title": "UI/UX Designer · Internship at DXC Technology",
+    "roles": [
+      {
+        "role": "",
+        "description": "Designed front-end elements for an employee management portal.\nWorked on full-stack development in Angular, Spring MVC, and Neo4j\nto create, deploy, and test the product.\nDesigned and developed the product as a POC in React Native and Google Firebase"
+      }
+    ],
+    "date": "2021 - 2022",
+    "tags": [
+      {
+        "type": "Languages & Frameworks",
+        "name": "Adobe XD"
+      },
+      {
+        "type": "Languages & Frameworks",
+        "name": "Angular"
+      },
+      {
+        "type": "Languages & Frameworks",
+        "name": "JavaScript"
+      },
+      {
+        "type": "Languages & Frameworks",
+        "name": "Java"
+      },
+      {
+        "type": "Languages & Frameworks",
+        "name": "Spring MVC"
+      },
+      {
+        "type": "Languages & Frameworks",
+        "name": "Neo4j"
+      },
+      {
+        "type": "Languages & Frameworks",
+        "name": "React/Native"
+      },
+      {
+        "type": "Cloud Services",
+        "name": "Firebase"
+      },
+      {
+        "type": "Cloud Services",
+        "name": "Firebase Auth"
+      },
+      {
+        "type": "Cloud Services",
+        "name": "Firestore"
+      }
+    ],
+    "companyUrl": "https://dxc.com"
+  }
+]
