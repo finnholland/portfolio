@@ -1,5 +1,66 @@
 [
   {
+    "title": "Full Stack Engineer · Coviu Global",
+    "roles": [
+      {
+        "role": "Full Stack Engineer",
+        "description": "Worked on a telehealth platform in a small team responsible for video and call health. Responsibilities include developing systems for phone transfers using Twilio, optimising video call feeds over the wire with WebRTC, and managing user subscriptions and features with Stripe and Chargify"
+      }
+    ],
+    "date": "2025 - Present",
+    "tags": [
+      {
+        "type": "Languages & Frameworks",
+        "name": "Typescript"
+      },
+      {
+        "type": "Languages & Frameworks",
+        "name": "Scala"
+      },
+      {
+        "type": "Languages & Frameworks",
+        "name": "Java"
+      },
+      {
+        "type": "Languages & Frameworks",
+        "name": "JavaScript"
+      },
+      {
+        "type": "Cloud Services",
+        "name": "Postgres"
+      },
+      {
+        "type": "Cloud Services",
+        "name": "Chargify"
+      },
+      {
+        "type": "Cloud Services",
+        "name": "Stripe"
+      },
+      {
+        "type": "Cloud Services",
+        "name": "Docker"
+      },
+      {
+        "type": "Cloud Services",
+        "name": "Twilio"
+      },
+      {
+        "type": "Cloud Services",
+        "name": "WebRTC"
+      },
+      {
+        "type": "Cloud Services",
+        "name": "Atlassian Suite"
+      },
+      {
+        "type": "Cloud Services",
+        "name": "BitBucket Pipelines"
+      }
+    ],
+    "companyUrl": "https://www.coviu.com/"
+  },
+  {
     "title": "DevOps Engineer · Aligent",
     "roles": [
       {
@@ -7,7 +68,7 @@
         "description": "Developed internal tools which assisted developers to deliver products and results faster and more effectively. Interfaced with large scale clients to ensure their cloud infrastructure was tailored perfectly to their requirements and could handle the anticipated traffic. Utilised AWS CDK to develop reusable modules and BitBucket CI/CD to enforce company-wide coding standards."
       }
     ],
-    "date": "2024 - Present",
+    "date": "2024 - 2025",
     "tags": [
       {
         "type": "Languages & Frameworks",
