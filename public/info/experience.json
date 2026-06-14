@@ -1,78 +1,111 @@
 [
   {
-    "title": "Full Stack Engineer · Coviu Global",
+    "title": "Full-Stack Engineer · Comunet",
     "roles": [
       {
-        "role": "Full Stack Engineer",
-        "description": "Worked on a telehealth platform in a small team responsible for video and call health. Responsibilities include developing systems for phone transfers using Twilio, optimising video call feeds over the wire with WebRTC, and managing user subscriptions and features with Stripe and Chargify"
+        "role": "Full-Stack Engineer",
+        "description": "Worked with international clients to streamline their software and hardware integration for field operations.\nLed changes to existing integrations in Azure connecting with multiple development teams.\nOptimised large scale SQL queries for data aggregation and transformation."
       }
     ],
-    "date": "2025 - Present",
+    "date": "Feb 2026 - Present",
     "tags": [
       {
         "type": "Languages & Frameworks",
-        "name": "Typescript"
+        "name": "TypeScript"
       },
       {
         "type": "Languages & Frameworks",
-        "name": "Scala"
+        "name": "C#"
       },
       {
         "type": "Languages & Frameworks",
-        "name": "Java"
+        "name": "SQL"
       },
       {
         "type": "Languages & Frameworks",
-        "name": "JavaScript"
+        "name": "Python"
+      },
+      {
+        "type": "Languages & Frameworks",
+        "name": "GitHub Actions"
       },
       {
         "type": "Cloud Services",
-        "name": "Postgres"
+        "name": "Azure"
       },
       {
         "type": "Cloud Services",
-        "name": "Chargify"
+        "name": "Azure Data Lake"
       },
       {
         "type": "Cloud Services",
-        "name": "Stripe"
+        "name": "Azure Data Factory"
       },
       {
         "type": "Cloud Services",
-        "name": "Docker"
+        "name": "Amazon Bedrock"
       },
       {
         "type": "Cloud Services",
-        "name": "Twilio"
+        "name": "CDK"
       },
       {
         "type": "Cloud Services",
+        "name": "Langfuse"
+      }
+    ],
+    "companyUrl": "https://comunet.com.au"
+  },
+  {
+    "title": "Full-Stack Engineer · Coviu",
+    "roles": [
+      {
+        "role": "Full-Stack Engineer",
+        "description": "Delivered customer-facing features in a fast-growing company, collaborating closely in a small, high-ownership team.\nBuilt a video and voice platform using WebRTC, Twilio, and Krisp, with emphasis on reliability, clarity, and ease of use.\nDeveloped highly performant front-ends, APIs, and database layers distributed in AWS across Australia and United States.\nDeveloped a POC incoming call reminder using React Native."
+      }
+    ],
+    "date": "May 2025 - Nov 2025",
+    "tags": [
+      {
+        "type": "Languages & Frameworks",
+        "name": "TypeScript"
+      },
+      {
+        "type": "Languages & Frameworks",
+        "name": "React Native"
+      },
+      {
+        "type": "Languages & Frameworks",
         "name": "WebRTC"
       },
       {
-        "type": "Cloud Services",
-        "name": "Atlassian Suite"
+        "type": "Languages & Frameworks",
+        "name": "Twilio"
+      },
+      {
+        "type": "Languages & Frameworks",
+        "name": "Krisp"
       },
       {
         "type": "Cloud Services",
-        "name": "BitBucket Pipelines"
+        "name": "AWS"
       }
     ],
-    "companyUrl": "https://www.coviu.com/"
+    "companyUrl": "https://coviu.com"
   },
   {
     "title": "DevOps Engineer · Aligent",
     "roles": [
       {
         "role": "DevOps Engineer",
-        "description": "Developed internal tools which assisted developers to deliver products and results faster and more effectively. Interfaced with large scale clients to ensure their cloud infrastructure was tailored perfectly to their requirements and could handle the anticipated traffic. Utilised AWS CDK to develop reusable modules and BitBucket CI/CD to enforce company-wide coding standards."
+        "description": "Responsible for deploying scalable and highly available ecommerce infrastructure using AWS and Adobe Commerce.\nDeveloped internal tooling with intuitive UIs, streamlining developer workflows.\nOptimised static and server-side web hosting in AWS, reducing costs using serverless technologies.\nUsed security OWASP, Aikido, and npm auditing to safeguard front-end applications."
       }
     ],
-    "date": "2024 - 2025",
+    "date": "April 2024 - May 2025",
     "tags": [
       {
         "type": "Languages & Frameworks",
-        "name": "Typescript"
+        "name": "TypeScript"
       },
       {
         "type": "Languages & Frameworks",
@@ -118,18 +151,18 @@
     "companyUrl": "https://www.aligent.com.au/"
   },
   {
-    "title": "Full Stack Developer · Graduate at Chamonix IT",
+    "title": "Developer · Chamonix IT",
     "roles": [
       {
-        "role": "Cloud Engineer - 6 Months",
-        "description": "Utilised Terraform for Azure cloud to deliver a highly scalable solution for National Pharmacies, deployed in one click.\nMaintained cloud infrastructure ensuring best security practices by leveraging Prisma vulnerability scanning.\nDeveloped Azure PowerShell scripts to assist in automation for Azure resources.\nIntegrated the client onto the cloud, seamlessly transitioning their data away from on premises.\nDeveloped and deployed changes in C# APIs and MSSQL databases."
+        "role": "Integrations Developer - Feb 2023 to April 2024",
+        "description": "Designed and deployed a highly scalable Azure solution using Terraform, ensuring stringent security using secure networking and Prisma Scan.\nAutomated deployments of Azure resources and front-end environments through DevOps Pipelines.\nCollaborated with clients to define and implement front-end integrations, ensuring seamless API communication using Angular, C#, and Azure SQL.\nFacilitated seamless migration of client data to Azure, optimising accessibility and integrity using Function Apps, Azure SQL, and a C# API."
       },
       {
-        "role": "UI/UX & Front End Developer - 12 Months",
-        "description": "Led UI/UX Design in Figma for SAHealth adhering to client requirements, resulting in end-user centric interfaces.\nDeveloped an Angular front end to deliver a user-friendly experience and integrated it with a MSSQL and C# backend.\nAssisted with the development of MSSQL and C# API integration."
+        "role": "Full-Stack Developer - Feb 2022 to Jan 2023",
+        "description": "Led UI/UX Design in Figma, delivering intuitive interfaces for web, mobile, and tablet.\nDesigned, developed, and deployed an Angular front-end integrated with a C# and MSSQL backend, dockerised and hosted in Azure Containers.\nEnsured best security policies using OWASP, Jasmine, and Azure WAF."
       }
     ],
-    "date": "2022 - 2023",
+    "date": "Feb 2022 - April 2024",
     "tags": [
       {
         "type": "Languages & Frameworks",
@@ -153,11 +186,11 @@
       },
       {
         "type": "Languages & Frameworks",
-        "name": "Oracle"
+        "name": "Terraform"
       },
       {
         "type": "Languages & Frameworks",
-        "name": "Terraform"
+        "name": "Docker"
       },
       {
         "type": "Cloud Services",
@@ -169,14 +202,6 @@
       },
       {
         "type": "Cloud Services",
-        "name": "Private DNS"
-      },
-      {
-        "type": "Cloud Services",
-        "name": "VMs"
-      },
-      {
-        "type": "Cloud Services",
         "name": "Azure SQL"
       },
       {
@@ -185,7 +210,7 @@
       },
       {
         "type": "Cloud Services",
-        "name": "VNet"
+        "name": "DevOps Pipelines"
       }
     ],
     "companyUrl": "https://chamonix.com.au"

@@ -1,16 +1,240 @@
 [
   {
-    "title": "Sagas",
-    "description": "Personal blog website where I post updates about projects or interests I partake in. The project is built on AWS serverless tech like Lambda, DynamoDB",
-    "imageUrl": "/images/sagas.png",
+    "title": "Kiki's Content Delivery Service",
+    "description": "CLI tool for managing AWS infrastructure — Lambda, ECS, RDS, and S3/CloudFront hosting — without writing CloudFormation directly. Generates AWS CDK apps on the fly and runs them inside Docker, so no local CDK or specific Node version is required.",
+    "imageUrl": "/images/kiki.png",
     "tags": [
       {
         "type": "Languages & Frameworks",
-        "name": "Figma"
+        "name": "TypeScript"
+      },
+      {
+        "type": "Languages & Frameworks",
+        "name": "Node.js"
+      },
+      {
+        "type": "Languages & Frameworks",
+        "name": "Docker"
+      },
+      {
+        "type": "Cloud Services",
+        "name": "AWS"
+      },
+      {
+        "type": "Cloud Services",
+        "name": "CDK"
+      },
+      {
+        "type": "Cloud Services",
+        "name": "Lambda"
+      },
+      {
+        "type": "Cloud Services",
+        "name": "ECS"
+      },
+      {
+        "type": "Cloud Services",
+        "name": "RDS"
+      },
+      {
+        "type": "Cloud Services",
+        "name": "S3"
+      },
+      {
+        "type": "Cloud Services",
+        "name": "CloudFront"
+      },
+      {
+        "type": "Cloud Services",
+        "name": "Route53"
+      },
+      {
+        "type": "Cloud Services",
+        "name": "ACM"
+      },
+      {
+        "type": "Cloud Services",
+        "name": "Secrets Manager"
+      },
+      {
+        "type": "Cloud Services",
+        "name": "IAM"
+      }
+    ],
+    "githubUrl": "https://github.com/finnholland/Kikis-Content-Delivery-Service"
+  },
+  {
+    "title": "You Are Here",
+    "description": "Location-based app for iOS and Android. Users can post photos, share them with friends, each photo is geo-tagged similar to instagram's explore page. Great for finding your next destination!",
+    "imageUrl": "/images/youarehere.png",
+    "tags": [
+      {
+        "type": "Languages & Frameworks",
+        "name": "TypeScript"
+      },
+      {
+        "type": "Languages & Frameworks",
+        "name": "React Native"
+      },
+      {
+        "type": "Languages & Frameworks",
+        "name": "Swift"
+      },
+      {
+        "type": "Languages & Frameworks",
+        "name": "Kotlin"
+      },
+      {
+        "type": "Languages & Frameworks",
+        "name": "NativeWind"
+      },
+      {
+        "type": "Languages & Frameworks",
+        "name": "Google Maps"
+      },
+      {
+        "type": "Cloud Services",
+        "name": "Firebase"
+      },
+      {
+        "type": "Cloud Services",
+        "name": "Firestore"
+      },
+      {
+        "type": "Cloud Services",
+        "name": "Firebase Storage"
+      },
+      {
+        "type": "Cloud Services",
+        "name": "Cloud Functions"
+      },
+      {
+        "type": "Cloud Services",
+        "name": "Firebase Auth"
+      },
+      {
+        "type": "Cloud Services",
+        "name": "FCM"
+      }
+    ],
+    "githubUrl": "https://github.com/finnholland/portfolio/blob/master/projects/youarehere.md"
+  },
+  {
+    "title": "Orbiti",
+    "description": "Mobile tech demo exploring proximity-based professional networking using Bluetooth Low Energy, built with React Native for Android and iOS. Your phone passively broadcasts a BLE signal — when another Orbit user is nearby, their profile card appears automatically, sorted by signal strength.",
+    "imageUrl": "/images/orbiti.png",
+    "tags": [
+      {
+        "type": "Languages & Frameworks",
+        "name": "TypeScript"
+      },
+      {
+        "type": "Languages & Frameworks",
+        "name": "React Native"
+      },
+      {
+        "type": "Languages & Frameworks",
+        "name": "NativeWind"
+      },
+      {
+        "type": "Languages & Frameworks",
+        "name": "BLE"
+      },
+      {
+        "type": "Cloud Services",
+        "name": "Firebase"
+      },
+      {
+        "type": "Cloud Services",
+        "name": "Firestore"
+      },
+      {
+        "type": "Cloud Services",
+        "name": "Firebase Storage"
+      }
+    ],
+    "githubUrl": "https://github.com/finnholland/portfolio/blob/master/projects/orbiti.md"
+  },
+  {
+    "title": "Dusubs",
+    "description": "Browser extension that overlays annotated Chinese and Japanese subtitles on YouTube and Bilibili — pinyin for Chinese, furigana for Japanese. Hover any word for its dictionary definition, click to save it. Saved words sync to dusubs.com for spaced-repetition flashcard review using a Leitner system.",
+    "imageUrl": "/images/dusubs.png",
+    "tags": [
+      {
+        "type": "Languages & Frameworks",
+        "name": "TypeScript"
       },
       {
         "type": "Languages & Frameworks",
         "name": "JavaScript"
+      },
+      {
+        "type": "Languages & Frameworks",
+        "name": "Preact"
+      },
+      {
+        "type": "Languages & Frameworks",
+        "name": "NextJS"
+      },
+      {
+        "type": "Languages & Frameworks",
+        "name": "React"
+      },
+      {
+        "type": "Languages & Frameworks",
+        "name": "Tailwind CSS"
+      },
+      {
+        "type": "Languages & Frameworks",
+        "name": "Firefox Extension"
+      },
+      {
+        "type": "Cloud Services",
+        "name": "Firebase"
+      },
+      {
+        "type": "Cloud Services",
+        "name": "Firestore"
+      },
+      {
+        "type": "Cloud Services",
+        "name": "Firebase Auth"
+      },
+      {
+        "type": "Cloud Services",
+        "name": "AWS"
+      },
+      {
+        "type": "Cloud Services",
+        "name": "S3"
+      },
+      {
+        "type": "Cloud Services",
+        "name": "CloudFront"
+      },
+      {
+        "type": "Cloud Services",
+        "name": "Route53"
+      },
+      {
+        "type": "Cloud Services",
+        "name": "CDK"
+      }
+    ],
+    "githubUrl": "https://github.com/finnholland/dusubs"
+  },
+  {
+    "title": "Sagas",
+    "description": "Personal development blog where posts can be written in Markdown, organised into series with custom tags, and shared publicly. Built on Next.js with a fully serverless AWS backend provisioned with Terraform.",
+    "imageUrl": "/images/sagas.png",
+    "tags": [
+      {
+        "type": "Languages & Frameworks",
+        "name": "TypeScript"
+      },
+      {
+        "type": "Languages & Frameworks",
+        "name": "NextJS"
       },
       {
         "type": "Languages & Frameworks",
@@ -22,7 +246,7 @@
       },
       {
         "type": "Languages & Frameworks",
-        "name": "NoSQL"
+        "name": "Tailwind CSS"
       },
       {
         "type": "Languages & Frameworks",
@@ -34,11 +258,7 @@
       },
       {
         "type": "Cloud Services",
-        "name": "Amplify"
-      },
-      {
-        "type": "Cloud Services",
-        "name": "DynamoDB"
+        "name": "API Gateway"
       },
       {
         "type": "Cloud Services",
@@ -46,27 +266,35 @@
       },
       {
         "type": "Cloud Services",
+        "name": "DynamoDB"
+      },
+      {
+        "type": "Cloud Services",
         "name": "Cognito"
+      },
+      {
+        "type": "Cloud Services",
+        "name": "S3"
+      },
+      {
+        "type": "Cloud Services",
+        "name": "Route53"
+      },
+      {
+        "type": "Cloud Services",
+        "name": "ACM"
       }
     ],
     "githubUrl": "https://github.com/finnholland/sagas"
   },
   {
     "title": "fromeroad",
-    "description": "Fictional social media platform for the employees of Adelaide's Lot Fourteen on Frome Road. Integrating React, Node Express, MySQL, all hosted on AWS.",
+    "description": "Full-stack social platform built as a community space for employees of Adelaide's Lot Fourteen precinct. Users can post, comment, vote, and follow trending members. Built solo as a deep-dive into full-stack development and AWS infrastructure.",
     "imageUrl": "/images/fromeroad.png",
     "tags": [
       {
         "type": "Languages & Frameworks",
-        "name": "Figma"
-      },
-      {
-        "type": "Languages & Frameworks",
-        "name": "Illustrator"
-      },
-      {
-        "type": "Languages & Frameworks",
-        "name": "JavaScript"
+        "name": "TypeScript"
       },
       {
         "type": "Languages & Frameworks",
@@ -74,11 +302,19 @@
       },
       {
         "type": "Languages & Frameworks",
-        "name": "MySQL"
+        "name": "Node.js"
       },
       {
         "type": "Languages & Frameworks",
         "name": "Express"
+      },
+      {
+        "type": "Languages & Frameworks",
+        "name": "MySQL"
+      },
+      {
+        "type": "Languages & Frameworks",
+        "name": "Docker"
       },
       {
         "type": "Languages & Frameworks",
@@ -94,11 +330,19 @@
       },
       {
         "type": "Cloud Services",
+        "name": "ECS"
+      },
+      {
+        "type": "Cloud Services",
         "name": "RDS"
       },
       {
         "type": "Cloud Services",
-        "name": "ECS"
+        "name": "S3"
+      },
+      {
+        "type": "Cloud Services",
+        "name": "SES"
       },
       {
         "type": "Cloud Services",
@@ -106,23 +350,7 @@
       },
       {
         "type": "Cloud Services",
-        "name": "IAM"
-      },
-      {
-        "type": "Cloud Services",
         "name": "ECR"
-      },
-      {
-        "type": "Cloud Services",
-        "name": "EC2"
-      },
-      {
-        "type": "Cloud Services",
-        "name": "VPC"
-      },
-      {
-        "type": "Cloud Services",
-        "name": "S3"
       },
       {
         "type": "Cloud Services",
@@ -136,73 +364,17 @@
     "githubUrl": "https://github.com/finnholland/fromeroad"
   },
   {
-    "title": "zeile",
-    "description": "Real-time forum style chat room where all users share the same floor. Utilising Google Firebase snapshots for real-time updates in the database and serving users instantly.",
-    "imageUrl": "/images/zeile.png",
-    "tags": [
-      {
-        "type": "Languages & Frameworks",
-        "name": "Figma"
-      },
-      {
-        "type": "Languages & Frameworks",
-        "name": "Illustrator"
-      },
-      {
-        "type": "Languages & Frameworks",
-        "name": "JavaScript"
-      },
-      {
-        "type": "Languages & Frameworks",
-        "name": "React"
-      },
-      {
-        "type": "Languages & Frameworks",
-        "name": "Firebase"
-      },
-      {
-        "type": "Languages & Frameworks",
-        "name": "NextJS"
-      },
-      {
-        "type": "Languages & Frameworks",
-        "name": "Terraform"
-      },
-      {
-        "type": "Cloud Services",
-        "name": "Firebase"
-      },
-      {
-        "type": "Cloud Services",
-        "name": "Firestore"
-      },
-      {
-        "type": "Cloud Services",
-        "name": "Hosting"
-      },
-      {
-        "type": "Cloud Services",
-        "name": "Firebase Functions"
-      }
-    ],
-    "githubUrl": "https://github.com/finnholland/zeile"
-  },
-  {
     "title": "Portfolio",
-    "description": "Personal portfolio website for showcasing experience and projects to potential employers. ",
+    "description": "Personal portfolio website for showcasing experience and projects to potential employers. Built with Next.js and TypeScript, hosted on AWS S3 + CloudFront via CDK.",
     "imageUrl": "/images/portfolio.png",
     "tags": [
       {
         "type": "Languages & Frameworks",
+        "name": "TypeScript"
+      },
+      {
+        "type": "Languages & Frameworks",
         "name": "NextJS"
-      },
-      {
-        "type": "Languages & Frameworks",
-        "name": "Figma"
-      },
-      {
-        "type": "Languages & Frameworks",
-        "name": "JavaScript"
       },
       {
         "type": "Languages & Frameworks",
@@ -210,7 +382,11 @@
       },
       {
         "type": "Languages & Frameworks",
-        "name": "Terraform"
+        "name": "Tailwind CSS"
+      },
+      {
+        "type": "Languages & Frameworks",
+        "name": "Figma"
       },
       {
         "type": "Cloud Services",
@@ -218,7 +394,15 @@
       },
       {
         "type": "Cloud Services",
-        "name": "Amplify"
+        "name": "CDK"
+      },
+      {
+        "type": "Cloud Services",
+        "name": "S3"
+      },
+      {
+        "type": "Cloud Services",
+        "name": "CloudFront"
       },
       {
         "type": "Cloud Services",
@@ -226,7 +410,7 @@
       },
       {
         "type": "Cloud Services",
-        "name": "Google Domains"
+        "name": "ACM"
       }
     ],
     "githubUrl": "https://github.com/finnholland/portfolio"

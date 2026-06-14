@@ -93,7 +93,7 @@ export class StaticHostingStack extends Stack {
       extraDistributionCnames: props.extraDomains,
       backendHost: props.backendPlatformDomain,
       comment: props.comment,
-      s3ExtendedProps: { publicReadAccess: true, blockPublicAccess: undefined },
+      // s3ExtendedProps: { publicReadAccess: true, blockPublicAccess: undefined },
       // Disabled as CSP does not merge and report based on the values added via the meta tag in the app.
       // We still get the protection from the values in the meta tag, just not the reporting.
       disableCSP: true,

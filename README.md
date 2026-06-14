@@ -1,45 +1,62 @@
-## Overview
+# Finn Holland — Projects
 
-This is a simple repo where I update my expertise and projects (also on GitHub) for my portfolio.
+Full-stack developer with a focus on cloud infrastructure, mobile, and developer tooling. This repo is the source for [finnholland.dev](https://finnholland.dev).
 
-### Setup
-To create your own copy of this, you can fork the repo and install the dependencies with
-```
-git clone https://github.com/finnholland/portfolio.git
-```
-```
-cd portfolio 
-```
-```
-npm i
-```
-and finally 
-```
-npm run dev
-```
+---
 
-This will create the webpage on localhost:3000.
-You will obviously have all of my details there and may want to update it to use yours unless you want to apply for jobs on my behalf :)
+## Projects
 
-### Updating your details
-I've tried to keep the project as simple as possible only requiring updates in a few files when you want to add some things in. Of course if you feel like changing it up a bit you can.
-- These files are the json files inside `/public/info/*.json`
-*You can find the types for these json objects inside `types.ts`*
-- To add your own image, simply put your image in the repo as `/public/images/profile.jpg`
-*you may have to delete the .next folder to see the change (it caches)*
-- Change the LinkedIn and GitHub link in `/components/profile/profile.tsx` to your own.
+### [Dusubs](projects/dusubs.md)
+Browser extension that overlays annotated Chinese and Japanese subtitles on YouTube and Bilibili — pinyin for Chinese, furigana for Japanese. Saved words sync to [dusubs.com](https://www.dusubs.com) for spaced-repetition flashcard review.
 
-That should be looking much more like your resumé!
+`TypeScript` `JavaScript` `Preact` `Next.js` `Tailwind CSS` `Firefox Extension` `Firebase` `AWS S3` `CloudFront`
 
-### Updating for your infra
-- Change your AWS details in `cdk-infra/bin/app.ts` the key values are `account`, `cloudfrontCertificateArn`, and the `subDomainName`, `domainName`, along with any optional extra domains you want.
-- Update the bucket name in `package.json scripts` from `www.finnholland.dev` to your bucket name (`${subDomainName}.${domainName}`)
-- Run `cd cdk-infra && cdk deploy portfolio` to deploy the infra to AWS
+---
 
-### Deploying
-The way I did it was using `@aligent/static-hosting` which is an open-source repo we use at my current company to assist in in creating the infrastructure to host SWAs in AWS. 
+### [Orbiti](projects/orbiti.md)
+Mobile tech demo exploring proximity-based professional networking using Bluetooth Low Energy. Your phone passively broadcasts a BLE signal — when another Orbiti user is nearby, their profile card appears automatically, sorted by signal strength.
 
-I haven't set up CI/CD on this but may look into GitHub Actions, for now you can run `npm run bnd` to build and deploy to your S3 bucket
-However you can choose whichever hosting you want, even bare metal docker.
+`TypeScript` `React Native` `BLE` `NativeWind` `Firebase` `Firestore`
 
-For Amplify you can see my repo [fromeroad](https://github.com/finnholland/fromeroad/blob/master/terraform/Instructions.md#amplify) (excluding env vars) in order to see how to host it on AWS Amplify.
+---
+
+### [Kiki's Content Delivery Service](projects/kikis.md)
+CLI tool for managing AWS infrastructure — Lambda, ECS, RDS, and S3/CloudFront hosting — without writing CloudFormation directly. Generates AWS CDK apps on the fly and runs them inside Docker, so no local CDK or specific Node version is required.
+
+`TypeScript` `Node.js` `Docker` `AWS CDK` `Lambda` `ECS` `RDS` `S3` `CloudFront`
+
+---
+
+### [You Are Here](projects/youarehere.md)
+Location-based app for iOS and Android. Users can post photos, share them with friends, each photo is geo-tagged similar to instagram's explore page. Great for finding your next destination!
+
+`TypeScript` `React Native` `Swift` `Kotlin` `Google Maps` `Firebase` `Firestore` `Cloud Functions` `FCM`
+
+---
+
+### [Sagas](projects/sagas.md)
+Personal development blog where posts can be written in Markdown, organised into series with custom tags, and shared publicly. Fully serverless AWS backend provisioned with Terraform.
+
+`TypeScript` `Next.js` `React` `Python` `Tailwind CSS` `Terraform` `API Gateway` `Lambda` `DynamoDB` `Cognito`
+
+---
+
+### [fromeroad](projects/fromeroad.md)
+Full-stack social platform built as a community space for employees of Adelaide's Lot Fourteen precinct. Users can post, comment, vote, and follow trending members across a feed with dark mode and mobile support.
+
+`TypeScript` `React` `Node.js` `Express` `MySQL` `Docker` `Terraform` `ECS` `RDS` `CodePipeline`
+
+---
+
+### [Portfolio](projects/portfolio.md)
+This site. Personal portfolio for showcasing experience and projects, hosted on AWS S3 + CloudFront via CDK.
+
+`TypeScript` `Next.js` `Tailwind CSS` `AWS CDK` `S3` `CloudFront` `Route53`
+
+---
+
+## Links
+
+- [finnholland.dev](https://finnholland.dev)
+- [github.com/finnholland](https://github.com/finnholland)
+- [linkedin.com/in/finnholland](https://linkedin.com/in/finnholland)

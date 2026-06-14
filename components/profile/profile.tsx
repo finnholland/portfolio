@@ -56,7 +56,7 @@ const Profile = (props: Props) => {
       <div>
         <div className='flex flex-row mb-5 items-center'>
           <div>
-            <Image className='rounded-2xl' src='images/profile.jpg' alt='profile' width={130} height={130} />
+            <Image className='rounded-2xl md:rounded-2xl max-w-none' src='images/profile.jpg' alt='profile' width={130} height={130} />
           </div>
           <div className='flex flex-col ml-3'>
             <span className='text-4xl font-bold'>{about.name}</span>
