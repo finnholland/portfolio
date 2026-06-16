@@ -75,10 +75,10 @@ export default function Home() {
   const Experience = ({ experience }: { experience: Experience }) => {
     return (
       <a key={experience.title} href={experience.companyUrl} target='_blank'
-        className='group/experience flex-row flex flex-shrink my-5 p-5 lg:hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:hover:drop-shadow-lg 
+        className='group/experience flex-col sm:flex-row flex flex-shrink my-5 p-5 lg:hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:hover:drop-shadow-lg
         hover:bg-custom-blue-50/20 lg:hover:!opacity-100 lg:group-hover:opacity-50 rounded-2xl'>
-        <div className='mr-5 shrink-0 w-24 hover:custom-blue'>
-          <span className='font-extralight'>{experience.date}</span>
+        <div className='shrink-0 mb-2 sm:mb-0 sm:mr-5 sm:w-24'>
+          <span className='font-extralight text-sm'>{experience.date}</span>
         </div>
         <div>
           <p className='group-hover/experience:text-custom-blue-100 font-medium mb-5'>{experience.title}</p>
@@ -102,8 +102,8 @@ export default function Home() {
     return (
       <a key={project.title} href={project.githubUrl} target='_blank'
         className='group/project cursor-pointer flex-row flex flex-shrink my-5 p-5 lg:hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:hover:drop-shadow-lg hover:bg-custom-blue-50/20 lg:hover:!opacity-100 lg:group-hover:opacity-50 rounded-2xl'>
-        <div className='mr-5 shrink-0'>
-          <div className='w-32 h-32 relative block'>
+        <div className='hidden md:block mr-5 shrink-0'>
+          <div className='w-24 h-24 relative'>
             <Image className='group-hover/project:border-custom-blue-100 group-hover/project:border-2 rounded-md object-cover' src={project.imageUrl} fill alt={project.title} />
           </div>
         </div>
@@ -147,12 +147,12 @@ export default function Home() {
   }
 
   return (
-    <div ref={scrollRef} onScroll={controlNavbar} className='bg-custom-blue-1000 h-screen w-screen flex flex-row justify-center overflow-auto scroll-smooth'>
-      <div className={`flex flex-col w-1/5 xl:w-1/5 md:w-2/6 lg:w-2/6 sticky top-0`}>
+    <div ref={scrollRef} onScroll={controlNavbar} className='bg-custom-blue-1000 h-screen w-screen flex flex-col md:flex-row md:justify-center overflow-auto scroll-smooth'>
+      <div className={`flex flex-col w-full md:w-[30%] md:sticky md:top-0`}>
         <Profile filters={filters} setFilters={setFilters} />
       </div>
-      <div className='flex flex-col w-1/3 xl:w-1/3 md:w-1/2 lg:w-3/5 px-5'>
-        <div ref={aboutRef} id='about' className='flex flex-col w-full mb-8 pt-24'>
+      <div className='flex flex-col w-full md:w-3/5 px-5'>
+        <div ref={aboutRef} id='about' className='flex flex-col w-full mb-8 pt-8 md:pt-24'>
           <About />
         </div>
         <div ref={experienceRef} id='experience' className='group flex flex-col w-full pt-14'>

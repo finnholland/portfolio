@@ -52,14 +52,14 @@ const Profile = (props: Props) => {
   }
 
   return (
-    <div className=' h-2/5 pt-24 justify-between flex flex-col'>
+    <div className='h-auto md:h-2/5 pt-8 md:pt-24 pb-4 md:pb-0 px-5 md:px-0 justify-between flex flex-col'>
       <div>
         <div className='flex flex-row mb-5 items-center'>
           <div>
             <Image className='rounded-2xl md:rounded-2xl max-w-none' src='images/profile.jpg' alt='profile' width={130} height={130} />
           </div>
           <div className='flex flex-col ml-3'>
-            <span className='text-4xl font-bold'>{about.name}</span>
+            <span className='text-2xl md:text-4xl font-bold'>{about.name}</span>
             <span className='text-base font-medium my-1' dangerouslySetInnerHTML={{ __html: clean }} />
             <span className='font-extralight'>{about.shortBio}</span>
           </div>

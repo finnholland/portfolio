@@ -8,7 +8,7 @@ interface Props {
 
 const NavMenu = (props: Props) => {
   return (
-    <div className='flex flex-col flex-grow-0 sticky top-0 pt-24 justify-between w-8'>
+    <div className='hidden md:flex flex-col flex-grow-0 sticky top-0 pt-24 justify-between w-8'>
       <ul className='flex flex-col h-full justify-between'>
         <li onClick={() => props.setSection('about')} className={`${props.section === 'about' ? 'active h-3/4' : 'hover:h-1/2'} flex h-1/6 hover:h-3/4 transition-all`}>
           <a className='group flex items-center py-3 flex-col'
