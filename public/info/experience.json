@@ -3,7 +3,6 @@
     "title": "Full-Stack Engineer · Comunet",
     "roles": [
       {
-        "role": "Full-Stack Engineer",
         "description": "Worked with international clients to streamline their software and hardware integration for field operations.\nLed changes to existing integrations in Azure connecting with multiple development teams.\nOptimised large scale SQL queries for data aggregation and transformation."
       }
     ],
@@ -60,7 +59,6 @@
     "title": "Full-Stack Engineer · Coviu",
     "roles": [
       {
-        "role": "Full-Stack Engineer",
         "description": "Delivered customer-facing features in a fast-growing company, collaborating closely in a small, high-ownership team.\nBuilt a video and voice platform using WebRTC, Twilio, and Krisp, with emphasis on reliability, clarity, and ease of use.\nDeveloped highly performant front-ends, APIs, and database layers distributed in AWS across Australia and United States.\nDeveloped a POC incoming call reminder using React Native."
       }
     ],
@@ -97,7 +95,6 @@
     "title": "DevOps Engineer · Aligent",
     "roles": [
       {
-        "role": "DevOps Engineer",
         "description": "Responsible for deploying scalable and highly available ecommerce infrastructure using AWS and Adobe Commerce.\nDeveloped internal tooling with intuitive UIs, streamlining developer workflows.\nOptimised static and server-side web hosting in AWS, reducing costs using serverless technologies.\nUsed security OWASP, Aikido, and npm auditing to safeguard front-end applications."
       }
     ],
@@ -219,7 +216,6 @@
     "title": "UI/UX Designer · Internship at DXC Technology",
     "roles": [
       {
-        "role": "",
         "description": "Designed front-end elements for an employee management portal.\nWorked on full-stack development in Angular, Spring MVC, and Neo4j\nto create, deploy, and test the product.\nDesigned and developed the product as a POC in React Native and Google Firebase"
       }
     ],

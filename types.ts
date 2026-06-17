@@ -20,7 +20,7 @@ interface Project {
   githubUrl: string
 }
 interface Role {
-  role: string | undefined,
+  role?: string,
   description: string
 }
 

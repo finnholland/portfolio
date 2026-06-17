@@ -72,14 +72,11 @@ const Profile = (props: Props) => {
       </div>
       <div className='text-sm font-light mt-5'>
         <p>
-          Designed in <a className='hover:text-custom-blue-100 underline' href='https://www.figma.com/' target='_blank'>Figma</a>
-          &nbsp;and developed in <a className='hover:text-custom-blue-100 underline' href="https://code.visualstudio.com/" target='_blank'>VS Code</a>.
-          Frontend is built with <a className='hover:text-custom-blue-100 underline' href="https://nextjs.org/" target='_blank'>Next.js</a>
+          Designed in <a className='hover:text-custom-blue-100 underline' href='https://www.figma.com/' target='_blank'>Figma</a>, built with <a className='hover:text-custom-blue-100 underline' href="https://nextjs.org/" target='_blank'>Next.js</a>
           &nbsp;and <a className='hover:text-custom-blue-100 underline' href="https://tailwindcss.com/" target='_blank'>Tailwind CSS.</a>
         </p>
         <p className='my-3'>
-          Hosted using <a className='hover:text-custom-blue-100 underline' href="https://aws.amazon.com/amplify/" target='_blank'>AWS Amplify</a>
-          &nbsp;and <a className='hover:text-custom-blue-100 underline' href="https://aws.amazon.com/route53/" target='_blank'>Route 53</a> built with <a className='hover:text-custom-blue-100 underline' href="https://www.terraform.io/" target='_blank'>Terraform</a>.
+          Hosted using <a className='hover:text-custom-blue-100 underline' href="https://aws.amazon.com/" target='_blank'>AWS</a>, deployed with <a className='hover:text-custom-blue-100 underline' href="https://aws.amazon.com/cdk/" target='_blank'>AWS CDK</a>.
         </p>
         <p>
           Inspired by <a className='hover:text-custom-blue-100 underline' href="https://brittanychiang.com/" target='_blank'>brittanychiang.com</a>
